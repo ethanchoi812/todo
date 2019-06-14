@@ -1,10 +1,9 @@
 import projects from './projects';
 
-const addTodo = () => {
-    document.getElementById('form').addEventListener("submit", function(){
+const addTodo = (project) => {
+    document.getElementById('todo-form').addEventListener("submit", function(){
         event.preventDefault();
 
-        let project = projects();
         let todo = newTodo();
 
         project.push(todo);

@@ -1,5 +1,5 @@
-import 'flatpickr/dist/flatpickr.min.css';
 import flatpickr from "flatpickr";
+import css from 'flatpickr/dist/flatpickr.min.css';
 
 const dateField = flatpickr("#duedate", {
     disableMobile: true,
