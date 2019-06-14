@@ -1,4 +1,3 @@
-import projects from './projects';
 
 const addTodo = (project) => {
     document.getElementById('todo-form').addEventListener("submit", function(){

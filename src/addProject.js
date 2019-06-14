@@ -1,3 +1,5 @@
+import projects from './projects';
+
 const projects = () => [];
 
 const addProject = () => {
@@ -5,11 +7,12 @@ const addProject = () => {
         event.preventDefault();
 
         let project = newProject();
+        projects.push(project);
 
         clearForm();
-        console.log(project);
+        console.log(projects);
 
-        return project;
+        return projects;
     });
 
 }
