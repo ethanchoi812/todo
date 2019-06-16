@@ -1,18 +1,27 @@
 import projects from './projects';
 
-const projects = () => [];
+//set up projects
+let projectArr = projects();
+
+const displayProject = document.getElementById("display-projects");
+
+projectArr.forEach(project => {
+    displayProject.innerHTML += "<div class='project'>" + project["name"] + " " + "</div>"; 
+});
 
 const addProject = () => {
     document.getElementById('project-form').addEventListener("submit", function(){
         event.preventDefault();
 
-        let project = newProject();
-        projects.push(project);
+        let newProj = newProject();
+
+        projectArr.push(newProj);
+        displayProject.innerHTML += "<div class='project'>" + newProj["name"] + " " + "</div>"; 
 
         clearForm();
-        console.log(projects);
-
-        return projects;
+        console.log(projectArr);
+        
+        return projectArr;
     });
 
 }
