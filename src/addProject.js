@@ -3,10 +3,10 @@ import projects from './projects';
 //set up projects
 let projectArr = projects();
 
-const displayProject = document.getElementById("display-projects");
+const display = document.getElementById("display");
 
 projectArr.forEach(project => {
-    displayProject.innerHTML += "<div class='project'>" + project["name"] + " " + "</div>"; 
+    display.innerHTML += `<div class='project' data-name=${project['name']}>` + project["name"] + "</div>"; 
 });
 
 const addProject = () => {
@@ -16,7 +16,7 @@ const addProject = () => {
         let newProj = newProject();
 
         projectArr.push(newProj);
-        displayProject.innerHTML += "<div class='project'>" + newProj["name"] + " " + "</div>"; 
+        display.innerHTML += `<div class='project' data-name=${project['name']}>` + newProj["name"] + "</div>"; 
 
         clearForm();
         console.log(projectArr);
