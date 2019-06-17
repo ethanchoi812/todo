@@ -1,4 +1,3 @@
-
 //open project to show todo
 
 const openProject = () => {
@@ -15,8 +14,8 @@ const openProject = () => {
 
             //display details
             let projectName = project.dataset.name;
-            
-            console.log(this);
+            display.innerHTML = projectName + "<div class='back'>Back</div>";
+
         });
     });
 }
