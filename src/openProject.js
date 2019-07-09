@@ -5,8 +5,6 @@ const openProject = () => {
     const display = document.getElementById("display");
 
     let projectEl = document.querySelectorAll(".project");
-    
-    
 
     projectEl.forEach(function(el){
         
