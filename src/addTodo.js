@@ -1,14 +1,25 @@
+import projects from './projects';
 
-const addTodo = (project) => {
+const addTodo = (projectName) => {
+
+    let projectArr = projects();
+    //console.log(project);
+
+    let name;
+    projectName ? name = projectName : name = "Uncategorized";
+
     document.getElementById('todo-form').addEventListener("submit", function(){
         event.preventDefault();
 
+        let project = projectArr.find(project => project['name'] === name);
         let todo = newTodo();
 
-        project.push(todo);
+        project['todos'].push(todo);
+        
         clearForm();
-        console.log(projects);
-        return projects;
+
+        console.log(projectArr);
+        return projectArr;
     });
 }
 
@@ -21,13 +32,14 @@ const newTodo = () => {
     let description = document.getElementById('description').value;
     let priority = document.getElementById('priority').value;
     let duedate = document.getElementById('duedate').value;
+    
 
     let newTodo = todo(title, description, priority, duedate);
 
     return newTodo;
 }
 
-function clearForm(){
+const clearForm = () => {
     document.getElementById('title').value = '';
     document.getElementById('description').value = '';
     document.getElementById('priority').checked = false;

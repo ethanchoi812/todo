@@ -1,20 +1,27 @@
-//open project to show todo
+import addTodo from './addTodo';
 
+//open project to show todo
 const openProject = () => {
     const display = document.getElementById("display");
 
-    let projects = document.querySelectorAll(".project");
+    let projectEl = document.querySelectorAll(".project");
     
-    projects.forEach(function(project){
+    
+
+    projectEl.forEach(function(el){
         
-        project.addEventListener("click", function(){
-            //hide forms
-            let forms = document.querySelectorAll("form");
+        el.addEventListener("click", function(){
+            //hide project form
+            let forms = document.querySelectorAll("#project-form");
             forms.forEach((form) => { form.style.display = "none" });
 
             //display details
-            let projectName = project.dataset.name;
-            display.innerHTML = projectName + "<div class='back'>Back</div>";
+            let projectName = el.dataset.name;
+
+            display.innerHTML = `${projectName}<div class='back'>Back</div>`
+            console.log(projectName);
+
+            addTodo(projectName);
 
         });
     });

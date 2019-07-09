@@ -7,7 +7,8 @@ const displayProjects = (projectArr) => {
     display.innerHTML = "";
 
     projectArr.forEach(project => {
-        display.innerHTML += `<div class='project' data-name=${project['name']}>` + project["name"] + "</div>"; 
+        //display all projects
+        display.innerHTML += `<div class='project' data-name=${project['name']}>` + project['name'] + "</div>"; 
         
     });
 }

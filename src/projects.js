@@ -1,8 +1,9 @@
 const projects = () => 
 [
-    {name: "first"}, 
-    {name: "second"},
-    {name:"last"}
+    { name: "first", todos: [] }, 
+    { name: "second", todos: [] },
+    { name: "last", todos: [] },
+    { name: "Uncategorized", todos: [] }
 ];
 
 

@@ -1,14 +1,23 @@
 import dateField from './dateField';
-import addTodo from './addTodo';
+import projects from './projects';
 import addProject from './addProject';
 import openProject from './openProject';
+import displayProjects from './displayProjects';
+
+
+let projectArr = projects();
 
 //add project
 addProject();
 
-//add todo 
-addTodo();
+//display all projects
+displayProjects(projectArr);
 
 //open project
 openProject();
+
+//add todo 
+//addTodo();
+
+
 

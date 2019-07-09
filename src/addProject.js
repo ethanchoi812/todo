@@ -24,13 +24,14 @@ const addProject = () => {
 
 }
 
-const project = (name) => {
-    return { name };
+const project = (name, todo) => {
+    return { name, todo };
 }
 
 const newProject = () => {
     let name = document.getElementById('project-name').value;
-    let newProject = project(name);
+    let todo = [];
+    let newProject = project(name, todo);
 
     return newProject;
 }
