@@ -6,11 +6,14 @@ const displayProjects = (projectArr) => {
 
     display.innerHTML = "";
 
-    projectArr.forEach(project => {
-        //display all projects
-        display.innerHTML += `<div class='project' data-name=${project['name']}>` + project['name'] + "</div>"; 
-        
-    });
+    if (projectArr.length > 0) {
+        projectArr.forEach(project => {
+            //display all projects
+            display.innerHTML += `<div class='project' data-name=${project['name']}>` + project['name'] + "</div>";     
+        });
+    } else {
+        display.innerHTML = "No projects yet!";
+    }
 }
 
 export default displayProjects;

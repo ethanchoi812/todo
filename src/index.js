@@ -7,6 +7,9 @@ import displayProjects from './displayProjects';
 
 let projectArr = projects();
 
+//add todo 
+//addTodo();
+
 //add project
 addProject();
 
@@ -16,8 +19,6 @@ displayProjects(projectArr);
 //open project
 openProject();
 
-//add todo 
-//addTodo();
 
 
 

@@ -1,9 +1,12 @@
+import projects from './projects';
 import addTodo from './addTodo';
+import displayTodos from './displayTodos';
 
 //open project to show todo
 const openProject = () => {
-    const display = document.getElementById("display");
 
+    let projectArr = projects();
+    const display = document.getElementById("display");
     let projectEl = document.querySelectorAll(".project");
 
     projectEl.forEach(function(el){
@@ -16,10 +19,11 @@ const openProject = () => {
             //display details
             let projectName = el.dataset.name;
 
-            display.innerHTML = `${projectName}<div class='back'>Back</div>`
-            console.log(projectName);
+            let project = projectArr.find(project => project['name'] === projectName);
 
+            display.innerHTML = `<div>${projectName}</div><div class='back'>Back</div>`
             addTodo(projectName);
+            displayTodos(project);
 
         });
     });

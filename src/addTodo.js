@@ -1,4 +1,5 @@
 import projects from './projects';
+import displayTodos from './displayTodos';
 
 const addTodo = (projectName) => {
 
@@ -16,9 +17,10 @@ const addTodo = (projectName) => {
 
         project['todos'].push(todo);
         
+        displayTodos(project);
+
         clearForm();
 
-        console.log(projectArr);
         return projectArr;
     });
 }
@@ -30,8 +32,11 @@ const todo = (title, description, priority, duedate) => {
 const newTodo = () => {
     let title = document.getElementById('title').value;
     let description = document.getElementById('description').value;
-    let priority = document.getElementById('priority').value;
     let duedate = document.getElementById('duedate').value;
+    let priority;
+    
+    document.getElementById('priority').value === 'on' ? priority = 'priority-on' : 'priority-off';
+
     
 
     let newTodo = todo(title, description, priority, duedate);
