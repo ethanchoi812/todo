@@ -13,6 +13,7 @@ const addProject = () => {
 
         let newProj = newProject();
         projectArr.push(newProj);
+        localStorage.setItem('projects', JSON.stringify(projectArr));
 
         displayProjects(projectArr);
         openProject();

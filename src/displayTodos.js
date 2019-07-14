@@ -1,7 +1,6 @@
 import projects from './projects';
 
 const displayTodos = (project) => {
-
     const display = document.getElementById("display-todo");
     display.innerHTML = "";
 
@@ -11,12 +10,12 @@ const displayTodos = (project) => {
 
     if (project['todos'].length > 0) {
        project['todos'].forEach(todo => {
-        todoDiv += `<p>${todo['title']}</p><p>${todo['description']}</p><p>${todo['duedate']}</p>`;
+
+        todoDiv += `<div class="${todo['priority']}"><p class="todo-title">${todo['title']}</p><p class="todo-description">${todo['description']}</p><p class="todo-duedate">${todo['duedate']}</p></div>`;
         });
     } else {
         todoDiv = 'No Todo yet!';
     }
-    console.log(todoDiv);
     display.innerHTML += todoDiv;
 }
 

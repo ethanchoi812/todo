@@ -34,10 +34,7 @@ const newTodo = () => {
     let description = document.getElementById('description').value;
     let duedate = document.getElementById('duedate').value;
     let priority;
-    
-    document.getElementById('priority').value === 'on' ? priority = 'priority-on' : 'priority-off';
-
-    
+    document.getElementById('priority').checked === true ? priority = "priority-on" : priority = "priority-off";
 
     let newTodo = todo(title, description, priority, duedate);
 
