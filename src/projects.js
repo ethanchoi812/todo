@@ -1,6 +1,6 @@
 const projects = () => {
-
-    let projects = (localStorage.getItem('projects')) ? JSON.parse(localStorage.getItem('projects')) : [{name: "Uncategorized", todos: []}];
+    
+    let projects = (localStorage.getItem('projects')) ? JSON.parse(localStorage.getItem('projects')) : [];
     return projects;
 }
 

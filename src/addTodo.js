@@ -15,8 +15,9 @@ const addTodo = (projectName) => {
         let project = projectArr.find(project => project['name'] === name);
         let todo = newTodo();
 
-        project['todos'].push(todo);
-        
+        project['todo'].push(todo);
+        localStorage.setItem('projects', JSON.stringify(projectArr));
+
         displayTodos(project);
 
         clearForm();

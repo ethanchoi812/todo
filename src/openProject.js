@@ -1,32 +1,42 @@
 import projects from './projects';
 import addTodo from './addTodo';
 import displayTodos from './displayTodos';
+import init from './init';
 
 //open project to show todo
 const openProject = () => {
 
     let projectArr = projects();
-    const display = document.getElementById("display");
-    let projectEl = document.querySelectorAll(".project");
+    const display = document.getElementById('display');
+    let projectEl = document.querySelectorAll('.project');
 
     projectEl.forEach(function(el){
         
-        el.addEventListener("click", function(){
+        el.addEventListener('click', function(){
             //hide project form
-            let forms = document.querySelectorAll("#project-form");
-            forms.forEach((form) => { form.style.display = "none" });
+            let projectForm = document.getElementById("project-form");
+            projectForm.style.display = "none";
+
+            let todoForm = document.getElementById("todo-form");
+            todoForm.style.display = "block";
 
             //display details
-            let projectName = el.dataset.name;
+            let projectId = el.dataset.id ;
+            let project = projectArr.find(project => project['id'] === projectId);
 
-            let project = projectArr.find(project => project['name'] === projectName);
+            display.innerHTML = `<div>${project['name']}</div><div id='back'>Back</div>`;
+            
+            const back = document.getElementById('back');
+            back.addEventListener('click', function(){
+                //todo: clear page;
+                init();
+            });
 
-            display.innerHTML = `<div>${projectName}</div><div class='back'>Back</div>`
-            addTodo(projectName);
+            addTodo(project['name']);
             displayTodos(project);
 
         });
-    });
+    });    
 }
 
 export default openProject;

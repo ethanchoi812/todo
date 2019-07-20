@@ -2,12 +2,13 @@ import projects from './projects';
 import displayProjects from './displayProjects';
 import openProject from './openProject';
 
-//set up projects
-let projectArr = projects();
-
-displayProjects(projectArr);
+//displayProjects(projectArr);
 
 const addProject = () => {
+
+    //set up projects
+    let projectArr = projects();
+
     document.getElementById('project-form').addEventListener("submit", function(){
         event.preventDefault();
 
@@ -25,14 +26,16 @@ const addProject = () => {
 
 }
 
-const project = (name, todo) => {
-    return { name, todo };
+const project = (id, name, todo) => {
+    return { id, name, todo };
 }
 
 const newProject = () => {
     let name = document.getElementById('project-name').value;
     let todo = [];
-    let newProject = project(name, todo);
+    let id = name.replace(/\s/g,'').toLowerCase();
+
+    let newProject = project(id, name, todo);
 
     return newProject;
 }
