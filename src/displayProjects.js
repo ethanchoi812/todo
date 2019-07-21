@@ -2,8 +2,7 @@
 
 const displayProjects = (projectArr) => {
 
-    const display = document.getElementById("display");
-
+    const display = document.getElementById('display-projects');
     display.innerHTML = "";
 
     if (projectArr.length > 0) {

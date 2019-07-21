@@ -1,40 +1,35 @@
 import projects from './projects';
 import addTodo from './addTodo';
 import displayTodos from './displayTodos';
-import init from './init';
+import goHome from './goHome';
+import dateField from './dateField';
 
 //open project to show todo
 const openProject = () => {
 
     let projectArr = projects();
-    const display = document.getElementById('display');
+    const display = document.getElementById('display-projects');
     let projectEl = document.querySelectorAll('.project');
 
-    projectEl.forEach(function(el){
+    projectEl.forEach((el) => {
         
         el.addEventListener('click', function(){
             //hide project form
-            let projectForm = document.getElementById("project-form");
-            projectForm.style.display = "none";
+            const projectForm = document.getElementById('project-form');
+            projectForm.style.display = 'none';
 
-            let todoForm = document.getElementById("todo-form");
-            todoForm.style.display = "block";
+            const todoForm = document.getElementById('todo-form');
+            todoForm.style.display = 'block';
 
             //display details
             let projectId = el.dataset.id ;
             let project = projectArr.find(project => project['id'] === projectId);
 
-            display.innerHTML = `<div>${project['name']}</div><div id='back'>Back</div>`;
+            display.innerHTML = `<div>${project['name']}</div><div id='go-home'>Go Home</div>`;
             
-            const back = document.getElementById('back');
-            back.addEventListener('click', function(){
-                //todo: clear page;
-                init();
-            });
-
             addTodo(project['name']);
             displayTodos(project);
-
+            goHome();
         });
     });    
 }
