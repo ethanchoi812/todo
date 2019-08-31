@@ -17,7 +17,6 @@ const displayTodos = (project) => {
             </div>
             <div class="todo-details" style="display:none;">
                 <p class="todo-description">${todo['description']}</p>
-                <p class="todo-duedate">${todo['duedate']}</p>
             </div>
         </div>`;
 

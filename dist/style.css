@@ -50,6 +50,7 @@ div.project {
     display: inline-block;
     padding: 15px 18px;
     margin-right: 25px;
+    margin-bottom: 20px;
     border-radius: 5px;
 }
 
@@ -83,9 +84,6 @@ div.project:last-child {
     padding-left: 10px;
 }
 
-.todo-title:nth-child(2n) {
-    background: #fff;
-}
 
 .todo-title h3 {
     display: inline-block;
@@ -94,22 +92,31 @@ div.project:last-child {
 }
 
 .todo-title span {
+    color: #333;
     font-weight: 400;
     margin-left: 25px;
     text-align: right;
 }
 
 .todo-title label {
+    color: #333;
     vertical-align: middle;
+}
+
+.priority-on .todo-title {
+    border-left: 5px solid #ff4800;
 }
 
 .todo-description {
     font-size: 16px;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
-.priority-on {
-    border-left: 5px solid #ff4800;
+
+.todo-details {
+    background: #fff9c9;
+    padding: 10px 10px 10px 25px;
 }
 
 #go-home {
