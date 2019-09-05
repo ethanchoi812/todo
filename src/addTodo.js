@@ -4,9 +4,8 @@ import displayTodos from './displayTodos';
 const addTodo = (projectName) => {
 
     let projectArr = projects();
-    //console.log(project);
-
     let name;
+    
     projectName ? name = projectName : name = "Uncategorized";
 
     document.getElementById('todo-form').addEventListener("submit", function(){
@@ -26,8 +25,8 @@ const addTodo = (projectName) => {
     });
 }
 
-const todo = (title, description, priority, duedate, id) => {
-    return { title, description, priority, duedate, id };
+const todo = (title, description, priority, duedate, done, id) => {
+    return { title, description, priority, duedate, done, id };
 }
 
 const newTodo = () => {
@@ -35,11 +34,14 @@ const newTodo = () => {
     let description = document.getElementById('description').value;
     let duedate = document.getElementById('duedate').value;
     let id = title.replace(/\s/g,'').toLowerCase();
+    let done = false;
+
+
     let priority;
 
     document.getElementById('priority').checked === true ? priority = "priority-on" : priority = "priority-off";
 
-    let newTodo = todo(title, description, priority, duedate, id);
+    let newTodo = todo(title, description, priority, duedate, done, id);
 
     return newTodo;
 }
