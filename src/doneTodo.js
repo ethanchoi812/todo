@@ -1,31 +1,39 @@
+import projects from './projects';
+import displayTodos from './displayTodos';
 
-const doneTodo = () => {
+const doneTodo = (project) => {
+    
+    let projectArr = projects();
+    let todoArr = project['todo'];
+    console.log(todoArr);
+
     const doneCheckboxes = document.querySelectorAll(".todo-title input[type='checkbox']");
     doneCheckboxes.forEach(function(checkbox) {
 
-        let todo = checkbox.parentNode;
-        let todoTitleColor = todo.querySelector("h3");
-        let todoDueDateColor = todo.querySelector("span");
-        let todoDetails = todo.nextElementSibling;
-
         checkbox.addEventListener("click", () => {
             
-            
             if (checkbox.checked) {
+            
+                let todoId = checkbox.parentNode.parentNode.id;
+                console.log(todoId);
 
-                todoTitleColor.style.color = "#ccc";
-                todoDueDateColor.style.color  = "#ccc";
-                todoDetails.style.color  = "#ccc";
-                      
-            } else if (!checkbox.checked) {
+                let index = todoArr.findIndex((todo) => todo['id'] === todoId);
 
-                todoTitleColor.style.color  = "#000";
-                todoDueDateColor.style.color = "#000";      
-                todoDetails.style.color  = "#000";
-                
-            }
+                // remove todo from todoArr
+                todoArr.splice(index, 1);
+                console.log(todoArr);
+
+                //remove og todoArr from projectArr?
+                //push to projectArr
+                //projectArr.push(todoArr);
+                //localStorage.setItem('projects', JSON.stringify(projectArr));
+                                      
+            } 
         });
     });
+
+//    displayTodos(project);
+    //return projectArr;
 }
 
 export default doneTodo;

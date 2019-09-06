@@ -1,6 +1,7 @@
 import projects from './projects';
 import addTodo from './addTodo';
 import displayTodos from './displayTodos';
+import doneTodo from './doneTodo';
 import goHome from './goHome';
 import dateField from './dateField';
 
@@ -29,6 +30,7 @@ const openProject = () => {
             
             addTodo(project['name']);
             displayTodos(project);
+            doneTodo(project);
             goHome();
         });
     });    

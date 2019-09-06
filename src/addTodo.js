@@ -25,8 +25,8 @@ const addTodo = (projectName) => {
     });
 }
 
-const todo = (title, description, priority, duedate, done, id) => {
-    return { title, description, priority, duedate, done, id };
+const todo = (title, description, priority, duedate, id) => {
+    return { title, description, priority, duedate, id };
 }
 
 const newTodo = () => {
@@ -34,14 +34,12 @@ const newTodo = () => {
     let description = document.getElementById('description').value;
     let duedate = document.getElementById('duedate').value;
     let id = title.replace(/\s/g,'').toLowerCase();
-    let done = false;
-
 
     let priority;
 
     document.getElementById('priority').checked === true ? priority = "priority-on" : priority = "priority-off";
 
-    let newTodo = todo(title, description, priority, duedate, done, id);
+    let newTodo = todo(title, description, priority, duedate, id);
 
     return newTodo;
 }
