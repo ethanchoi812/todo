@@ -5,15 +5,12 @@ const doneTodo = (projectId) => {
     
     let projectArr = projects();
     let thisProject = projectArr.find(project => project['id'] === projectId);
-
     let todoArr = thisProject['todo'];
 
     const checkboxes = document.querySelectorAll(".todo-title input[type='checkbox']");
     checkboxes.forEach(function(checkbox) {
 
         checkbox.addEventListener("click", () => {
-
-            //if (checkbox.checked) {
                 
                 let thisTodo = checkbox.parentNode.parentNode;
                 let todoId = thisTodo.id;
@@ -26,7 +23,7 @@ const doneTodo = (projectId) => {
 
                 localStorage.setItem('projects', JSON.stringify(projectArr));                          
                 displayTodos(thisProject);
-            //} 
+                return thisProject;
         });
     });
 }

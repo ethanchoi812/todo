@@ -11,11 +11,11 @@ const addTodo = (projectId) => {
         let project = projectArr.find(project => project['id'] === projectId);
         let todo = newTodo();
 
+        console.log(todo);
         project['todo'].push(todo);
         localStorage.setItem('projects', JSON.stringify(projectArr));
 
         displayTodos(project);
-
         clearForm();
 
         return projectArr;

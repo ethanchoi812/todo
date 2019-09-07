@@ -1,7 +1,6 @@
 import projects from './projects';
-import addTodo from './addTodo';
 import displayTodos from './displayTodos';
-import doneTodo from './doneTodo';
+import addTodo from './addTodo';
 import goHome from './goHome';
 import dateField from './dateField';
 
@@ -27,10 +26,9 @@ const openProject = () => {
             let project = projectArr.find(project => project['id'] === projectId);
 
             display.innerHTML = `<div>${project['name']}</div><div id='go-home'>Go Home</div>`;
-            
-            addTodo(projectId);
+
             displayTodos(project);
-            doneTodo(projectId);
+            addTodo(projectId);
             goHome();
         });
     });    

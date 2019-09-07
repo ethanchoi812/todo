@@ -1,6 +1,8 @@
 import openTodo from './openTodo';
+import doneTodo from './doneTodo';
 
 const displayTodos = (project) => {
+
     const display = document.getElementById('display-todos');
     display.innerHTML = ''
 
@@ -27,7 +29,8 @@ const displayTodos = (project) => {
     }
 
     display.innerHTML += todoDiv;
-    
+
+    doneTodo(project['id']);
     openTodo();
 
 }
