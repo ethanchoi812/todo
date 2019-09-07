@@ -1,6 +1,5 @@
 const openTodo = () => {
    
-    //const todoRow = document.getElementById("id");
     const todoTitles = document.querySelectorAll(".todo-title h3");
     todoTitles.forEach(function(todoTitle){
         

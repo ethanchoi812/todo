@@ -28,9 +28,9 @@ const openProject = () => {
 
             display.innerHTML = `<div>${project['name']}</div><div id='go-home'>Go Home</div>`;
             
-            addTodo(project['name']);
+            addTodo(projectId);
             displayTodos(project);
-            doneTodo(project);
+            doneTodo(projectId);
             goHome();
         });
     });    

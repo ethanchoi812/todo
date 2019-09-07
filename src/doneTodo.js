@@ -1,39 +1,34 @@
 import projects from './projects';
 import displayTodos from './displayTodos';
 
-const doneTodo = (project) => {
+const doneTodo = (projectId) => {
     
     let projectArr = projects();
-    let todoArr = project['todo'];
-    console.log(todoArr);
+    let thisProject = projectArr.find(project => project['id'] === projectId);
 
-    const doneCheckboxes = document.querySelectorAll(".todo-title input[type='checkbox']");
-    doneCheckboxes.forEach(function(checkbox) {
+    let todoArr = thisProject['todo'];
+
+    const checkboxes = document.querySelectorAll(".todo-title input[type='checkbox']");
+    checkboxes.forEach(function(checkbox) {
 
         checkbox.addEventListener("click", () => {
-            
-            if (checkbox.checked) {
-            
-                let todoId = checkbox.parentNode.parentNode.id;
-                console.log(todoId);
 
+            //if (checkbox.checked) {
+                
+                let thisTodo = checkbox.parentNode.parentNode;
+                let todoId = thisTodo.id;
                 let index = todoArr.findIndex((todo) => todo['id'] === todoId);
 
                 // remove todo from todoArr
                 todoArr.splice(index, 1);
-                console.log(todoArr);
 
-                //remove og todoArr from projectArr?
-                //push to projectArr
-                //projectArr.push(todoArr);
-                //localStorage.setItem('projects', JSON.stringify(projectArr));
-                                      
-            } 
+                thisProject['todo'] = todoArr;
+
+                localStorage.setItem('projects', JSON.stringify(projectArr));                          
+                displayTodos(thisProject);
+            //} 
         });
     });
-
-//    displayTodos(project);
-    //return projectArr;
 }
 
 export default doneTodo;

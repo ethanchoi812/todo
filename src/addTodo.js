@@ -1,17 +1,14 @@
 import projects from './projects';
 import displayTodos from './displayTodos';
 
-const addTodo = (projectName) => {
+const addTodo = (projectId) => {
 
     let projectArr = projects();
-    let name;
     
-    projectName ? name = projectName : name = "Uncategorized";
-
     document.getElementById('todo-form').addEventListener("submit", function(){
         event.preventDefault();
 
-        let project = projectArr.find(project => project['name'] === name);
+        let project = projectArr.find(project => project['id'] === projectId);
         let todo = newTodo();
 
         project['todo'].push(todo);
