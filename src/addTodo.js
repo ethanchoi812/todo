@@ -2,12 +2,10 @@ import projects from './projects';
 import displayTodos from './displayTodos';
 
 const addTodo = (projectId) => {
-
-    let projectArr = projects();
     
     document.getElementById('todo-form').addEventListener("submit", function(){
         event.preventDefault();
-
+        let projectArr = projects();
         let project = projectArr.find(project => project['id'] === projectId);
         let todo = newTodo();
 

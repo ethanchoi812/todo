@@ -20,6 +20,8 @@ const doneTodo = (projectId) => {
                 todoArr.splice(index, 1);
 
                 thisProject['todo'] = todoArr;
+                console.log(projectArr);
+                console.log(thisProject);
 
                 localStorage.setItem('projects', JSON.stringify(projectArr));                          
                 displayTodos(thisProject);
