@@ -61,14 +61,29 @@ div.project:last-child {
 
 /* Todo styles */
 
+#show-todo-form {
+    position: fixed;
+    bottom: 50px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 #todo-form {
+    background: #fff;
+    position: absolute;
     font-size: 16px;
-    margin-top: 40px;
+    top: 0;
+    padding: 20px 15px;
     vertical-align: top;
+    text-align: center;
+    height: 100%;
+    width: 100%;
 }
 
 #todo-form label {
     display: block;
+    text-align: left;
+    width: 50%;
 }
 
 #todo-form .inline-label {

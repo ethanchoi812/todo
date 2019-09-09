@@ -3,7 +3,12 @@ import doneTodo from './doneTodo';
 
 const displayTodos = (project) => {
 
+    const todoForm = document.getElementById('todo-form');
     const display = document.getElementById('display-todos');
+    const showTodoFormBtn = document.getElementById('show-todo-form');
+
+    todoForm.style.display =  'none';
+    showTodoFormBtn.style.display === 'none' ? showTodoFormBtn.style.display = 'block' : showTodoFormBtn.style.display === 'none';
     display.innerHTML = ''
 
     let todoDiv = '';

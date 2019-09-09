@@ -4,12 +4,13 @@ import displayTodos from './displayTodos';
 const addTodo = (projectId) => {
     
     document.getElementById('todo-form').addEventListener("submit", function(){
+
         event.preventDefault();
+        
         let projectArr = projects();
         let project = projectArr.find(project => project['id'] === projectId);
         let todo = newTodo();
 
-        console.log(todo);
         project['todo'].push(todo);
         localStorage.setItem('projects', JSON.stringify(projectArr));
 
