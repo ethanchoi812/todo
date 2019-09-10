@@ -30,18 +30,18 @@
             <label for="description">Description</label>
             <textarea id="description" name="description"></textarea>
         </div>
+        <div class="form-field form-field-duedate">
+            <label for="duedate">Due Date</label>
+            <input type="text" id="duedate" name="duedate" placeholder="Select Date" readonly="readonly">
+        </div>
         <div class="form-field form-field-priority">
             <input type="checkbox" id="priority" name="priority">
             <label class="inline-label" for="priority">Priority?</label>
         </div>
-        <div class="form-field form-field-duedate">
-        <label for="duedate">Due Date</label>
-        <input type="text" id="duedate" name="duedate" placeholder="Select Date" readonly="readonly">
-    </div>
         <div class="btn-container">
-            <button type="submit">Add Todo</button>
+            <button type="submit">Save Todo</button>
+            <button id="hide-todo-form">Close</button>
         </div>
-        <span id="hide-todo-form">Close</span>
     </form>
     <script src="main.js"></script>
   </body>

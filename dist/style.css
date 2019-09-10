@@ -3,18 +3,26 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
 }
 
+.form-field {
+    margin: 0 auto;
+    width: 40%;
+}
+
 .form-field input[type="text"], .form-field textarea {
     padding: 8px 10px;
     font-size: 18px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 40%;
+    width: 100%;
+}
+
+.form-field input[type="checkbox"] {
+
 }
 
 .form-field textarea {
     height: 60px;
 }
-
 
 .btn-container button {
     display: inline-block;
@@ -64,8 +72,7 @@ div.project:last-child {
 #show-todo-form {
     position: fixed;
     bottom: 50px;
-    margin: 0 auto;
-    text-align: center;
+    width: 100%;
 }
 
 #todo-form {
@@ -75,14 +82,13 @@ div.project:last-child {
     top: 0;
     padding: 20px 15px;
     vertical-align: top;
-    text-align: center;
+    text-align: left;
     height: 100%;
     width: 100%;
 }
 
 #todo-form label {
     display: block;
-    text-align: left;
     width: 50%;
 }
 
@@ -92,6 +98,17 @@ div.project:last-child {
 
 #todo-form input, #todo-form textarea {
     margin-bottom: 18px;
+}
+
+#todo-form .btn-container {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#hide-todo-form {
+    background: #fff;
+    border: 1px solid #ccc;
+    color: #333;
 }
 
 .todo-title {

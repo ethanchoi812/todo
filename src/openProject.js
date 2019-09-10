@@ -26,8 +26,8 @@ const openProject = () => {
             display.innerHTML =
                 `<div>${project['name']}</div>
                 <div id='go-home'>Go Home</div>
-                <div class="btn-container">
-                    <button id="show-todo-form">Add a Todo</button>
+                <div class="btn-container" id="show-todo-form">
+                    <button>Add a Todo</button>
                 </div>`;
 
             displayTodos(project);
