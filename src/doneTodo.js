@@ -7,10 +7,10 @@ const doneTodo = (projectId) => {
     let thisProject = projectArr.find(project => project['id'] === projectId);
     let todoArr = thisProject['todo'];
 
-    const checkboxes = document.querySelectorAll(".todo-title input[type='checkbox']");
+    const checkboxes = document.querySelectorAll('.todo-title input[type="checkbox"]');
     checkboxes.forEach(function(checkbox) {
 
-        checkbox.addEventListener("click", () => {
+        checkbox.addEventListener('click', () => {
                 
                 let thisTodo = checkbox.parentNode.parentNode;
                 let todoId = thisTodo.id;
