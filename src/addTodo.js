@@ -27,9 +27,11 @@ const todo = (title, description, priority, duedate, id) => {
 
 const newTodo = () => {
     let title = document.getElementById('title').value;
-    let description = document.getElementById('description').value;
+    let descriptionText = document.getElementById('description').value;
     let duedate = document.getElementById('duedate').value;
-    let id = title.replace(/\s/g,'').toLowerCase();
+    let id = title.replace(/\W/g,'').toLowerCase();
+
+    let description = descriptionText.replace(/\n\r?/g, '<br>');
 
     let priority;
 
