@@ -1,24 +1,19 @@
+import projects from './projects';
 
-const deleteProject = () => {
+const deleteProject = (projectId) => {
 
-    let projects = document.querySelectorAll('.project');
+    let projectArr = projects();
+    let index = projectArr.findIndex(project => project['id'] === projectId);
 
-    projects.forEach((project) => {
+    const deleteBtn = document.getElementById('delete-project');
 
-        let deleteBtn = project.getElementsByClassName('delete-project')[0];
-
-        project.addEventListener('mouseenter', () => {
-            if (deleteBtn.style.display === 'none') {
-                deleteBtn.style.display = 'inline-block'
-            };
-        });
-
-        project.addEventListener('mouseleave', () => {
-            if (deleteBtn.style.display === 'inline-block') {
-                deleteBtn.style.display = 'none'
-            };
-        });
+    deleteBtn.addEventListener('click', () => {
+        projectArr.splice(index, 1);
+        localStorage.setItem('projects', JSON.stringify(projectArr));
+        location.reload(true);
+                          
     });
+
 }
 
 export default deleteProject;

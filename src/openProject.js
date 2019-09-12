@@ -3,6 +3,7 @@ import displayTodos from './displayTodos';
 import openTodoForm from './openTodoForm';
 import addTodo from './addTodo';
 import goHome from './goHome';
+import deleteProject from './deleteProject';
 import dateField from './dateField';
 
 //open project to show todo
@@ -25,14 +26,16 @@ const openProject = () => {
 
             display.innerHTML =
                 `<div>${project['name']}</div>
-                <div id='go-home'>Go Home</div>
-                <div class="btn-container" id="show-todo-form">
-                    <button>Add a Todo</button>
+                <div class='btn-container'>
+                    <button id='show-todo-form'>Add a Todo</button>
+                    <button id='go-home' class='btn-alt'>Go Home</button>
+                    <div id='delete-project'>Delete project</div>
                 </div>`;
 
             displayTodos(project);
             openTodoForm();
             addTodo(projectId);
+            deleteProject(projectId);
             goHome();
         });
     });    
