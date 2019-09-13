@@ -1,3 +1,5 @@
+import clearForm from './clearForm';
+
 
 const openTodoForm = () => {
     
@@ -10,6 +12,7 @@ const openTodoForm = () => {
     });
 
     hideTodoFormBtn.addEventListener('click', function(){
+        clearForm();
         todoForm.style.display = 'none';
     });
 }

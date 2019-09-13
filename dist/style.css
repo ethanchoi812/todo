@@ -26,6 +26,11 @@ body {
     width: 100%;
 }
 
+#add-project {
+    position: static;
+    margin-top: 20px;
+}
+
 .btn-container button {
     display: inline-block;
     background-color: #ff4800;
@@ -52,14 +57,10 @@ button.btn-alt {
     text-align: center;
 }
 
-#project-form button {
-    margin-top: 40px;
-}
-
 #display-projects {
     text-align: center;
     font-size: 28px;
-    margin-top: 28px;
+    margin-top: 30px;
 }
 
 div.project {
@@ -109,6 +110,10 @@ div.project:last-child {
     text-align: center;
 }
 
+.todo-row {
+    border-bottom: 2px solid #ccc;
+}
+
 .todo-title {
     background: #eee;
     padding-left: 10px;
@@ -150,7 +155,7 @@ div.project:last-child {
 }
 
 #delete-project {
-    color: #ff4800;
+    color: #ff6b31;
     display: inline-block;
     font-size: 18px;
     text-align: right;

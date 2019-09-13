@@ -8,10 +8,11 @@ const deleteProject = (projectId) => {
     const deleteBtn = document.getElementById('delete-project');
 
     deleteBtn.addEventListener('click', () => {
-        projectArr.splice(index, 1);
-        localStorage.setItem('projects', JSON.stringify(projectArr));
-        location.reload(true);
-                          
+        if (window.confirm('Delete this project?')) { 
+            projectArr.splice(index, 1);
+            localStorage.setItem('projects', JSON.stringify(projectArr));
+            location.reload(true);
+        }
     });
 
 }
