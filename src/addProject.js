@@ -2,8 +2,6 @@ import projects from "./projects";
 import displayProjects from "./displayProjects";
 import openProject from "./openProject";
 
-//displayProjects(projectArr);
-
 const addProject = () => {
   //set up projects
   let projectArr = projects();
@@ -12,7 +10,6 @@ const addProject = () => {
     .getElementById("project-form")
     .addEventListener("submit", function() {
       event.preventDefault();
-
       let newProj = newProject();
       projectArr.push(newProj);
       localStorage.setItem("projects", JSON.stringify(projectArr));

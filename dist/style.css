@@ -1,162 +1,166 @@
-
 body {
-    font-family: 'Open Sans', Arial, sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
 }
 
 .form-field {
-    margin: 0 auto;
-    width: 40%;
+  margin: 0 auto;
+  width: 40%;
 }
 
-.form-field input[type="text"], .form-field textarea {
-    padding: 8px 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
+.form-field input[type="text"],
+.form-field textarea {
+  padding: 8px 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .form-field textarea {
-    height: 60px;
+  height: 60px;
 }
 
 .btn-container {
-    position: fixed;
-    bottom: 50px;
-    width: 100%;
+  position: fixed;
+  bottom: 50px;
+  width: 100%;
 }
 
 #add-project {
-    position: static;
-    margin-top: 20px;
+  position: static;
+  margin-top: 20px;
 }
 
 .btn-container button {
-    display: inline-block;
-    background-color: #ff4800;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    
+  display: inline-block;
+  background-color: #ff4800;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
 }
 
 button.btn-alt {
-    background: #fff;
-    border: 1px solid #ccc;
-    color: #333;
+  background: #fff;
+  border: 1px solid #ccc;
+  color: #333;
 }
-
 
 /* Project styles */
 
 #project-form {
-    font-size: 18px;
-    margin-top: 40px;
-    text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+  text-align: center;
 }
 
 #display-projects {
-    text-align: center;
-    font-size: 28px;
-    margin-top: 30px;
+  text-align: center;
+  font-size: 28px;
+  margin-top: 30px;
 }
 
 div.project {
-    background: #fff000;
-    display: inline-block;
-    position: relative;
-    padding: 15px 18px;
-    margin-right: 25px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+  background: #fff000;
+  display: inline-block;
+  position: relative;
+  padding: 15px 18px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
 div.project:last-child {
-    margin-right: 0px;
+  margin-right: 0px;
 }
 
 /* Todo styles */
 
-
 #todo-form {
-    background: #fff;
-    position: absolute;
-    font-size: 16px;
-    top: 0;
-    padding: 20px 15px;
-    vertical-align: top;
-    text-align: left;
-    height: 100%;
-    width: 100%;
+  background: #fff;
+  position: absolute;
+  font-size: 16px;
+  top: 0;
+  padding: 20px 15px;
+  vertical-align: top;
+  text-align: left;
+  height: 100%;
+  width: 100%;
 }
 
 #todo-form label {
-    display: block;
-    width: 50%;
+  display: block;
+  width: 50%;
 }
 
 #todo-form .inline-label {
-    display: inline;
+  display: inline;
 }
 
-#todo-form input, #todo-form textarea {
-    margin-bottom: 18px;
+#todo-form input,
+#todo-form textarea {
+  margin-bottom: 18px;
 }
 
 #todo-form .btn-container {
-    margin-top: 50px;
-    text-align: center;
+  margin-top: 50px;
+  text-align: center;
 }
 
 .todo-row {
-    border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
 }
 
 .todo-title {
-    background: #eee;
-    padding-left: 10px;
+  background: #eee;
+  padding-left: 10px;
 }
 
-
 .todo-title h3 {
-    display: inline-block;
-    font-size: 18px;
-    font-weight: 700;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .todo-title span {
-    color: #333;
-    font-weight: 400;
-    margin-left: 25px;
-    text-align: right;
+  color: #333;
+  font-weight: 400;
+  margin-left: 25px;
+  text-align: right;
 }
 
 .todo-title label {
-    color: #333;
-    vertical-align: middle;
+  color: #333;
+  vertical-align: middle;
 }
 
 .priority-on .todo-title {
-    border-left: 5px solid #ff4800;
+  border-left: 5px solid #ff4800;
 }
 
 .todo-description {
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 0;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-
 .todo-details {
-    background: #fff9c9;
-    padding: 10px 10px 10px 25px;
+  background: #fff9c9;
+  padding: 10px 10px 10px 25px;
 }
 
 #delete-project {
-    color: #ff6b31;
-    display: inline-block;
-    font-size: 18px;
-    text-align: right;
+  color: #ff6b31;
+  display: inline-block;
+  font-size: 18px;
+  text-align: right;
+}
+
+.has-error {
+  border: 1px solid #ff0000;
+}
+
+.error-msg {
+  color: #ff0000;
 }
