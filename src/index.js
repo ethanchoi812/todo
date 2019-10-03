@@ -14,9 +14,6 @@ addProject();
 //display all projects
 displayProjects(projectArr);
 
-// isValid = validateRequired(projectNameField);
-// if (isValid) {
-
 //open project
 openProject();
 
