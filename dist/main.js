@@ -2,8 +2,8 @@
   var t = {};
   function n(a) {
     if (t[a]) return t[a].exports;
-    var r = (t[a] = { i: a, l: !1, exports: {} });
-    return e[a].call(r.exports, r, r.exports, n), (r.l = !0), r.exports;
+    var i = (t[a] = { i: a, l: !1, exports: {} });
+    return e[a].call(i.exports, i, i.exports, n), (i.l = !0), i.exports;
   }
   (n.m = e),
     (n.c = t),
@@ -25,13 +25,13 @@
         Object.defineProperty(a, "default", { enumerable: !0, value: e }),
         2 & t && "string" != typeof e)
       )
-        for (var r in e)
+        for (var i in e)
           n.d(
             a,
-            r,
+            i,
             function(t) {
               return e[t];
-            }.bind(null, r)
+            }.bind(null, i)
           );
       return a;
     }),
@@ -74,8 +74,8 @@
             Object.assign ||
             function(e) {
               for (var t, n = 1, a = arguments.length; n < a; n++)
-                for (var r in (t = arguments[n]))
-                  Object.prototype.hasOwnProperty.call(t, r) && (e[r] = t[r]);
+                for (var i in (t = arguments[n]))
+                  Object.prototype.hasOwnProperty.call(t, i) && (e[i] = t[i]);
               return e;
             }).apply(this, arguments);
         },
@@ -235,10 +235,10 @@
           yearAriaLabel: "Year",
           time_24hr: !1
         },
-        r = function(e) {
+        i = function(e) {
           return ("0" + e).slice(-2);
         },
-        i = function(e) {
+        r = function(e) {
           return !0 === e ? 1 : 0;
         };
       function o(e, t, n) {
@@ -246,13 +246,13 @@
         return (
           void 0 === n && (n = !1),
           function() {
-            var r = this,
-              i = arguments;
+            var i = this,
+              r = arguments;
             null !== a && clearTimeout(a),
               (a = window.setTimeout(function() {
-                (a = null), n || e.apply(r, i);
+                (a = null), n || e.apply(i, r);
               }, t)),
-              n && !a && e.apply(r, i);
+              n && !a && e.apply(i, r);
           }
         );
       }
@@ -279,8 +279,8 @@
       function f(e, t) {
         var n = d("div", "numInputWrapper"),
           a = d("input", "numInput " + e),
-          r = d("span", "arrowUp"),
-          i = d("span", "arrowDown");
+          i = d("span", "arrowUp"),
+          r = d("span", "arrowDown");
         if (
           (-1 === navigator.userAgent.indexOf("MSIE 9.0")
             ? (a.type = "number")
@@ -288,7 +288,7 @@
           void 0 !== t)
         )
           for (var o in t) a.setAttribute(o, t[o]);
-        return n.appendChild(a), n.appendChild(r), n.appendChild(i), n;
+        return n.appendChild(a), n.appendChild(i), n.appendChild(r), n;
       }
       var p = function() {},
         u = function(e, t, n) {
@@ -310,7 +310,7 @@
           },
           K: function(e, t, n) {
             e.setHours(
-              (e.getHours() % 12) + 12 * i(new RegExp(n.amPM[1], "i").test(t))
+              (e.getHours() % 12) + 12 * r(new RegExp(n.amPM[1], "i").test(t))
             );
           },
           M: function(e, t, n) {
@@ -324,8 +324,8 @@
           },
           W: function(e, t, n) {
             var a = parseInt(t),
-              r = new Date(e.getFullYear(), 0, 2 + 7 * (a - 1), 0, 0, 0, 0);
-            return r.setDate(r.getDate() - r.getDay() + n.firstDayOfWeek), r;
+              i = new Date(e.getFullYear(), 0, 2 + 7 * (a - 1), 0, 0, 0, 0);
+            return i.setDate(i.getDate() - i.getDay() + n.firstDayOfWeek), i;
           },
           Y: function(e, t) {
             e.setFullYear(parseFloat(t));
@@ -399,10 +399,10 @@
             return u(h.n(e, t, n) - 1, !1, t);
           },
           G: function(e, t, n) {
-            return r(h.h(e, t, n));
+            return i(h.h(e, t, n));
           },
           H: function(e) {
-            return r(e.getHours());
+            return i(e.getHours());
           },
           J: function(e, t) {
             return void 0 !== t.ordinal
@@ -410,13 +410,13 @@
               : e.getDate();
           },
           K: function(e, t) {
-            return t.amPM[i(e.getHours() > 11)];
+            return t.amPM[r(e.getHours() > 11)];
           },
           M: function(e, t) {
             return u(e.getMonth(), !0, t);
           },
           S: function(e) {
-            return r(e.getSeconds());
+            return i(e.getSeconds());
           },
           U: function(e) {
             return e.getTime() / 1e3;
@@ -428,13 +428,13 @@
             return e.getFullYear();
           },
           d: function(e) {
-            return r(e.getDate());
+            return i(e.getDate());
           },
           h: function(e) {
             return e.getHours() % 12 ? e.getHours() % 12 : 12;
           },
           i: function(e) {
-            return r(e.getMinutes());
+            return i(e.getMinutes());
           },
           j: function(e) {
             return e.getDate();
@@ -443,7 +443,7 @@
             return t.weekdays.longhand[e.getDay()];
           },
           m: function(e) {
-            return r(e.getMonth() + 1);
+            return i(e.getMonth() + 1);
           },
           n: function(e) {
             return e.getMonth() + 1;
@@ -463,18 +463,18 @@
         },
         b = function(e) {
           var t = e.config,
-            r = void 0 === t ? n : t,
-            i = e.l10n,
-            o = void 0 === i ? a : i;
+            i = void 0 === t ? n : t,
+            r = e.l10n,
+            o = void 0 === r ? a : r;
           return function(e, t, n) {
             var a = n || o;
-            return void 0 !== r.formatDate
-              ? r.formatDate(e, t, a)
+            return void 0 !== i.formatDate
+              ? i.formatDate(e, t, a)
               : t
                   .split("")
-                  .map(function(t, n, i) {
-                    return h[t] && "\\" !== i[n - 1]
-                      ? h[t](e, a, r)
+                  .map(function(t, n, r) {
+                    return h[t] && "\\" !== r[n - 1]
+                      ? h[t](e, a, i)
                       : "\\" !== t
                       ? t
                       : "";
@@ -484,26 +484,26 @@
         },
         v = function(e) {
           var t = e.config,
-            r = void 0 === t ? n : t,
-            i = e.l10n,
-            o = void 0 === i ? a : i;
-          return function(e, t, a, i) {
+            i = void 0 === t ? n : t,
+            r = e.l10n,
+            o = void 0 === r ? a : r;
+          return function(e, t, a, r) {
             if (0 === e || e) {
               var l,
-                c = i || o,
+                c = r || o,
                 d = e;
               if (e instanceof Date) l = new Date(e.getTime());
               else if ("string" != typeof e && void 0 !== e.toFixed)
                 l = new Date(e);
               else if ("string" == typeof e) {
-                var s = t || (r || n).dateFormat,
+                var s = t || (i || n).dateFormat,
                   f = String(e).trim();
                 if ("today" === f) (l = new Date()), (a = !0);
                 else if (/Z$/.test(f) || /GMT$/.test(f)) l = new Date(e);
-                else if (r && r.parseDate) l = r.parseDate(e, s);
+                else if (i && i.parseDate) l = i.parseDate(e, s);
                 else {
                   l =
-                    r && r.noCalendar
+                    i && i.noCalendar
                       ? new Date(new Date().setHours(0, 0, 0, 0))
                       : new Date(new Date().getFullYear(), 0, 1, 0, 0, 0, 0);
                   for (
@@ -535,7 +535,7 @@
               }
               if (l instanceof Date && !isNaN(l.getTime()))
                 return !0 === a && l.setHours(0, 0, 0, 0), l;
-              r.errorHandler(new Error("Invalid date provided: " + d));
+              i.errorHandler(new Error("Invalid date provided: " + d));
             }
           };
         };
@@ -564,12 +564,12 @@
                     return (e[n] = t[n]);
                   });
               },
-              r = 0,
-              i = t;
-            r < i.length;
-            r++
+              i = 0,
+              r = t;
+            i < r.length;
+            i++
           ) {
-            var o = i[r];
+            var o = r[i];
             a(o);
           }
           return e;
@@ -615,7 +615,7 @@
                 void 0 !== h.amPM &&
                   e.target === h.amPM &&
                   (h.amPM.textContent =
-                    h.l10n.amPM[i(h.amPM.textContent === h.l10n.amPM[0])]);
+                    h.l10n.amPM[r(h.amPM.textContent === h.l10n.amPM[0])]);
                 var a = parseFloat(n.getAttribute("min")),
                   o = parseFloat(n.getAttribute("max")),
                   l = parseFloat(n.getAttribute("step")),
@@ -626,17 +626,17 @@
                   var f = n === h.hourElement,
                     p = n === h.minuteElement;
                   s < a
-                    ? ((s = o + s + i(!f) + (i(f) && i(!h.amPM))),
-                      p && R(void 0, -1, h.hourElement))
+                    ? ((s = o + s + r(!f) + (r(f) && r(!h.amPM))),
+                      p && Y(void 0, -1, h.hourElement))
                     : s > o &&
-                      ((s = n === h.hourElement ? s - o - i(!h.amPM) : a),
-                      p && R(void 0, 1, h.hourElement)),
+                      ((s = n === h.hourElement ? s - o - r(!h.amPM) : a),
+                      p && Y(void 0, 1, h.hourElement)),
                     h.amPM &&
                       f &&
                       (1 === l ? s + c === 23 : Math.abs(s - c) > l) &&
                       (h.amPM.textContent =
-                        h.l10n.amPM[i(h.amPM.textContent === h.l10n.amPM[0])]),
-                    (n.value = r(s));
+                        h.l10n.amPM[r(h.amPM.textContent === h.l10n.amPM[0])]),
+                    (n.value = i(s));
                 }
               })(e);
           var t = h._input.value;
@@ -648,14 +648,14 @@
               t,
               n = (parseInt(h.hourElement.value.slice(-2), 10) || 0) % 24,
               a = (parseInt(h.minuteElement.value, 10) || 0) % 60,
-              r =
+              i =
                 void 0 !== h.secondElement
                   ? (parseInt(h.secondElement.value, 10) || 0) % 60
                   : 0;
             void 0 !== h.amPM &&
               ((e = n),
               (t = h.amPM.textContent),
-              (n = (e % 12) + 12 * i(t === h.l10n.amPM[1])));
+              (n = (e % 12) + 12 * r(t === h.l10n.amPM[1])));
             var o =
                 void 0 !== h.config.minTime ||
                 (h.config.minDate &&
@@ -675,7 +675,7 @@
                   : h.config.maxDate;
               (n = Math.min(n, c.getHours())) === c.getHours() &&
                 (a = Math.min(a, c.getMinutes())),
-                a === c.getMinutes() && (r = Math.min(r, c.getSeconds()));
+                a === c.getMinutes() && (i = Math.min(i, c.getSeconds()));
             }
             if (o) {
               var d =
@@ -684,9 +684,9 @@
                   : h.config.minDate;
               (n = Math.max(n, d.getHours())) === d.getHours() &&
                 (a = Math.max(a, d.getMinutes())),
-                a === d.getMinutes() && (r = Math.max(r, d.getSeconds()));
+                a === d.getMinutes() && (i = Math.max(i, d.getSeconds()));
             }
-            O(n, a, r);
+            O(n, a, i);
           }
         }
         function T(e) {
@@ -699,15 +699,15 @@
             n = h.config.defaultSeconds;
           if (void 0 !== h.config.minDate) {
             var a = h.config.minDate.getHours(),
-              r = h.config.minDate.getMinutes();
-            (e = Math.max(e, a)) === a && (t = Math.max(r, t)),
-              e === a && t === r && (n = h.config.minDate.getSeconds());
+              i = h.config.minDate.getMinutes();
+            (e = Math.max(e, a)) === a && (t = Math.max(i, t)),
+              e === a && t === i && (n = h.config.minDate.getSeconds());
           }
           if (void 0 !== h.config.maxDate) {
-            var i = h.config.maxDate.getHours(),
+            var r = h.config.maxDate.getHours(),
               o = h.config.maxDate.getMinutes();
-            (e = Math.min(e, i)) === i && (t = Math.min(o, t)),
-              e === i && t === o && (n = h.config.maxDate.getSeconds());
+            (e = Math.min(e, r)) === r && (t = Math.min(o, t)),
+              e === r && t === o && (n = h.config.maxDate.getSeconds());
           }
           O(e, t, n);
         }
@@ -717,13 +717,13 @@
             h.hourElement &&
               h.minuteElement &&
               !h.isMobile &&
-              ((h.hourElement.value = r(
-                h.config.time_24hr ? e : ((12 + e) % 12) + 12 * i(e % 12 == 0)
+              ((h.hourElement.value = i(
+                h.config.time_24hr ? e : ((12 + e) % 12) + 12 * r(e % 12 == 0)
               )),
-              (h.minuteElement.value = r(t)),
+              (h.minuteElement.value = i(t)),
               void 0 !== h.amPM &&
-                (h.amPM.textContent = h.l10n.amPM[i(e >= 12)]),
-              void 0 !== h.secondElement && (h.secondElement.value = r(n)));
+                (h.amPM.textContent = h.l10n.amPM[r(e >= 12)]),
+              void 0 !== h.secondElement && (h.secondElement.value = i(n)));
         }
         function j(e) {
           var t = parseInt(e.target.value) + (e.delta || 0);
@@ -815,12 +815,12 @@
               });
             })();
           else {
-            var e = o(ie, 50);
+            var e = o(re, 50);
             (h._debouncedChange = o(A, x)),
               h.daysContainer &&
                 !/iPhone|iPad|iPod/i.test(navigator.userAgent) &&
                 N(h.daysContainer, "mouseover", function(e) {
-                  "range" === h.config.mode && re(e.target);
+                  "range" === h.config.mode && ie(e.target);
                 }),
               N(window.document.body, "keydown", ae),
               h.config.inline || h.config.static || N(window, "resize", e),
@@ -840,7 +840,7 @@
                 void 0 !== h.hourElement &&
                 (N(h.timeContainer, ["increment"], E),
                 N(h.timeContainer, "blur", E, { capture: !0 }),
-                N(h.timeContainer, "mousedown", _(P)),
+                N(h.timeContainer, "mousedown", _(R)),
                 N(
                   [h.hourElement, h.minuteElement],
                   ["focus", "click"],
@@ -862,7 +862,7 @@
                   ));
           }
         }
-        function L(e, t) {
+        function P(e, t) {
           var n =
               void 0 !== e
                 ? h.parseDate(e)
@@ -873,7 +873,7 @@
                     ? h.config.maxDate
                     : h.now),
             a = h.currentYear,
-            r = h.currentMonth;
+            i = h.currentMonth;
           try {
             void 0 !== n &&
               ((h.currentYear = n.getFullYear()),
@@ -884,21 +884,21 @@
           }
           t && h.currentYear !== a && (he("onYearChange"), $()),
             !t ||
-              (h.currentYear === a && h.currentMonth === r) ||
+              (h.currentYear === a && h.currentMonth === i) ||
               he("onMonthChange"),
             h.redraw();
         }
-        function P(e) {
+        function R(e) {
           ~e.target.className.indexOf("arrow") &&
-            R(e, e.target.classList.contains("arrowUp") ? 1 : -1);
+            Y(e, e.target.classList.contains("arrowUp") ? 1 : -1);
         }
-        function R(e, t, n) {
+        function Y(e, t, n) {
           var a = e && e.target,
-            r = n || (a && a.parentNode && a.parentNode.firstChild),
-            i = be("increment");
-          (i.delta = t), r && r.dispatchEvent(i);
+            i = n || (a && a.parentNode && a.parentNode.firstChild),
+            r = be("increment");
+          (r.delta = t), i && i.dispatchEvent(r);
         }
-        function Y() {
+        function L() {
           var e = window.document.createDocumentFragment();
           if (
             ((h.calendarContainer = d("div", "flatpickr-calendar")),
@@ -982,7 +982,7 @@
                 if (
                   ((h.minuteElement = n.getElementsByTagName("input")[0]),
                   (h.hourElement.tabIndex = h.minuteElement.tabIndex = -1),
-                  (h.hourElement.value = r(
+                  (h.hourElement.value = i(
                     h.latestSelectedDateObj
                       ? h.latestSelectedDateObj.getHours()
                       : h.config.time_24hr
@@ -997,7 +997,7 @@
                           }
                         })(h.config.defaultHour)
                   )),
-                  (h.minuteElement.value = r(
+                  (h.minuteElement.value = i(
                     h.latestSelectedDateObj
                       ? h.latestSelectedDateObj.getMinutes()
                       : h.config.defaultMinute
@@ -1030,7 +1030,7 @@
                   h.timeContainer.classList.add("hasSeconds");
                   var a = f("flatpickr-second");
                   (h.secondElement = a.getElementsByTagName("input")[0]),
-                    (h.secondElement.value = r(
+                    (h.secondElement.value = i(
                       h.latestSelectedDateObj
                         ? h.latestSelectedDateObj.getSeconds()
                         : h.config.defaultSeconds
@@ -1052,7 +1052,7 @@
                       "span",
                       "flatpickr-am-pm",
                       h.l10n.amPM[
-                        i(
+                        r(
                           (h.latestSelectedDateObj
                             ? h.hourElement.value
                             : h.config.defaultHour) > 11
@@ -1103,38 +1103,38 @@
             ).appendChild(h.calendarContainer);
         }
         function H(e, t, n, a) {
-          var r = te(t, !0),
-            i = d("span", "flatpickr-day " + e, t.getDate().toString());
+          var i = te(t, !0),
+            r = d("span", "flatpickr-day " + e, t.getDate().toString());
           return (
-            (i.dateObj = t),
-            (i.$i = a),
-            i.setAttribute(
+            (r.dateObj = t),
+            (r.$i = a),
+            r.setAttribute(
               "aria-label",
               h.formatDate(t, h.config.ariaDateFormat)
             ),
             -1 === e.indexOf("hidden") &&
               0 === y(t, h.now) &&
-              ((h.todayDateElem = i),
-              i.classList.add("today"),
-              i.setAttribute("aria-current", "date")),
-            r
-              ? ((i.tabIndex = -1),
+              ((h.todayDateElem = r),
+              r.classList.add("today"),
+              r.setAttribute("aria-current", "date")),
+            i
+              ? ((r.tabIndex = -1),
                 ve(t) &&
-                  (i.classList.add("selected"),
-                  (h.selectedDateElem = i),
+                  (r.classList.add("selected"),
+                  (h.selectedDateElem = r),
                   "range" === h.config.mode &&
                     (c(
-                      i,
+                      r,
                       "startRange",
                       h.selectedDates[0] && 0 === y(t, h.selectedDates[0], !0)
                     ),
                     c(
-                      i,
+                      r,
                       "endRange",
                       h.selectedDates[1] && 0 === y(t, h.selectedDates[1], !0)
                     ),
-                    "nextMonthDay" === e && i.classList.add("inRange"))))
-              : i.classList.add("flatpickr-disabled"),
+                    "nextMonthDay" === e && r.classList.add("inRange"))))
+              : r.classList.add("flatpickr-disabled"),
             "range" === h.config.mode &&
               (function(e) {
                 return (
@@ -1144,7 +1144,7 @@
                 );
               })(t) &&
               !ve(t) &&
-              i.classList.add("inRange"),
+              r.classList.add("inRange"),
             h.weekNumbers &&
               1 === h.config.showMonths &&
               "prevMonthDay" !== e &&
@@ -1153,12 +1153,12 @@
                 "beforeend",
                 "<span class='flatpickr-day'>" + h.config.getWeek(t) + "</span>"
               ),
-            he("onDayCreate", i),
-            i
+            he("onDayCreate", r),
+            r
           );
         }
         function W(e) {
-          e.focus(), "range" === h.config.mode && re(e);
+          e.focus(), "range" === h.config.mode && ie(e);
         }
         function B(e) {
           for (
@@ -1169,14 +1169,14 @@
             a += e
           )
             for (
-              var r = h.daysContainer.children[a],
-                i = e > 0 ? 0 : r.children.length - 1,
-                o = e > 0 ? r.children.length : -1,
-                l = i;
+              var i = h.daysContainer.children[a],
+                r = e > 0 ? 0 : i.children.length - 1,
+                o = e > 0 ? i.children.length : -1,
+                l = r;
               l != o;
               l += e
             ) {
-              var c = r.children[l];
+              var c = i.children[l];
               if (-1 === c.className.indexOf("hidden") && te(c.dateObj))
                 return c;
             }
@@ -1203,15 +1203,15 @@
                         ? e.dateObj.getMonth()
                         : h.currentMonth,
                     a = t > 0 ? h.config.showMonths : -1,
-                    r = t > 0 ? 1 : -1,
-                    i = n - h.currentMonth;
-                  i != a;
-                  i += r
+                    i = t > 0 ? 1 : -1,
+                    r = n - h.currentMonth;
+                  r != a;
+                  r += i
                 )
                   for (
-                    var o = h.daysContainer.children[i],
+                    var o = h.daysContainer.children[r],
                       l =
-                        n - h.currentMonth === i
+                        n - h.currentMonth === r
                           ? e.$i + t
                           : t < 0
                           ? o.children.length - 1
@@ -1219,7 +1219,7 @@
                       c = o.children.length,
                       d = l;
                     d >= 0 && d < c && d != (t > 0 ? c : -1);
-                    d += r
+                    d += i
                   ) {
                     var s = o.children[d];
                     if (
@@ -1229,7 +1229,7 @@
                     )
                       return W(s);
                   }
-                h.changeMonth(r), z(B(r), 0);
+                h.changeMonth(i), z(B(i), 0);
               })(a, t)
             : W(a);
         }
@@ -1238,8 +1238,8 @@
             var n =
                 (new Date(e, t, 1).getDay() - h.l10n.firstDayOfWeek + 7) % 7,
               a = h.utils.getDaysInMonth((t - 1 + 12) % 12),
-              r = h.utils.getDaysInMonth(t),
-              i = window.document.createDocumentFragment(),
+              i = h.utils.getDaysInMonth(t),
+              r = window.document.createDocumentFragment(),
               o = h.config.showMonths > 1,
               l = o ? "prevMonthDay hidden" : "prevMonthDay",
               c = o ? "nextMonthDay hidden" : "nextMonthDay",
@@ -1248,17 +1248,17 @@
             s <= a;
             s++, f++
           )
-            i.appendChild(H(l, new Date(e, t - 1, s), s, f));
-          for (s = 1; s <= r; s++, f++)
-            i.appendChild(H("", new Date(e, t, s), s, f));
+            r.appendChild(H(l, new Date(e, t - 1, s), s, f));
+          for (s = 1; s <= i; s++, f++)
+            r.appendChild(H("", new Date(e, t, s), s, f));
           for (
-            var p = r + 1;
+            var p = i + 1;
             p <= 42 - n && (1 === h.config.showMonths || f % 7 != 0);
             p++, f++
           )
-            i.appendChild(H(c, new Date(e, t + 1, p % r), p, f));
+            r.appendChild(H(c, new Date(e, t + 1, p % i), p, f));
           var u = d("div", "dayContainer");
-          return u.appendChild(i), u;
+          return u.appendChild(r), u;
         }
         function J() {
           if (void 0 !== h.daysContainer) {
@@ -1274,7 +1274,7 @@
             }
             h.daysContainer.appendChild(e),
               (h.days = h.daysContainer.firstChild),
-              "range" === h.config.mode && 1 === h.selectedDates.length && re();
+              "range" === h.config.mode && 1 === h.selectedDates.length && ie();
           }
         }
         function $() {
@@ -1320,23 +1320,23 @@
               $(),
               (e = h.monthsDropdownContainer));
           var a = f("cur-year", { tabindex: "-1" }),
-            r = a.getElementsByTagName("input")[0];
-          r.setAttribute("aria-label", h.l10n.yearAriaLabel),
+            i = a.getElementsByTagName("input")[0];
+          i.setAttribute("aria-label", h.l10n.yearAriaLabel),
             h.config.minDate &&
-              r.setAttribute("min", h.config.minDate.getFullYear().toString()),
+              i.setAttribute("min", h.config.minDate.getFullYear().toString()),
             h.config.maxDate &&
-              (r.setAttribute("max", h.config.maxDate.getFullYear().toString()),
-              (r.disabled =
+              (i.setAttribute("max", h.config.maxDate.getFullYear().toString()),
+              (i.disabled =
                 !!h.config.minDate &&
                 h.config.minDate.getFullYear() ===
                   h.config.maxDate.getFullYear()));
-          var i = d("div", "flatpickr-current-month");
+          var r = d("div", "flatpickr-current-month");
           return (
-            i.appendChild(e),
-            i.appendChild(a),
-            n.appendChild(i),
+            r.appendChild(e),
+            r.appendChild(a),
+            n.appendChild(r),
             t.appendChild(n),
-            { container: t, yearElement: r, monthElement: e }
+            { container: t, yearElement: i, monthElement: e }
           );
         }
         function K() {
@@ -1412,15 +1412,15 @@
                 (e.path &&
                   e.path.indexOf &&
                   (~e.path.indexOf(h.input) || ~e.path.indexOf(h.altInput))),
-              r =
+              i =
                 "blur" === e.type
                   ? a && e.relatedTarget && !Q(e.relatedTarget)
                   : !a && !n && !Q(e.relatedTarget),
-              i = !h.config.ignoredFocusElements.some(function(e) {
+              r = !h.config.ignoredFocusElements.some(function(e) {
                 return e.contains(t);
               });
-            r &&
-              i &&
+            i &&
+              r &&
               (h.close(),
               "range" === h.config.mode &&
                 1 === h.selectedDates.length &&
@@ -1471,13 +1471,13 @@
           if (void 0 === n) return !1;
           for (
             var a = h.config.enable.length > 0,
-              r = a ? h.config.enable : h.config.disable,
-              i = 0,
+              i = a ? h.config.enable : h.config.disable,
+              r = 0,
               o = void 0;
-            i < r.length;
-            i++
+            r < i.length;
+            r++
           ) {
-            if ("function" == typeof (o = r[i]) && o(n)) return a;
+            if ("function" == typeof (o = i[r]) && o(n)) return a;
             if (
               o instanceof Date &&
               void 0 !== n &&
@@ -1511,7 +1511,7 @@
           var t = e.target === h._input,
             n = h.config.allowInput,
             a = h.isOpen && (!n || !t),
-            r = h.config.inline && t && !n;
+            i = h.config.inline && t && !n;
           if (13 === e.keyCode && t) {
             if (n)
               return (
@@ -1525,11 +1525,11 @@
                 e.target.blur()
               );
             h.open();
-          } else if (Q(e.target) || a || r) {
-            var i = !!h.timeContainer && h.timeContainer.contains(e.target);
+          } else if (Q(e.target) || a || i) {
+            var r = !!h.timeContainer && h.timeContainer.contains(e.target);
             switch (e.keyCode) {
               case 13:
-                i ? (e.preventDefault(), E(), fe()) : pe(e);
+                r ? (e.preventDefault(), E(), fe()) : pe(e);
                 break;
               case 27:
                 e.preventDefault(), fe();
@@ -1540,7 +1540,7 @@
                 break;
               case 37:
               case 39:
-                if (i || t) h.hourElement && h.hourElement.focus();
+                if (r || t) h.hourElement && h.hourElement.focus();
                 else if (
                   (e.preventDefault(),
                   void 0 !== h.daysContainer &&
@@ -1561,16 +1561,16 @@
                 e.target === h.input
                   ? e.ctrlKey
                     ? (e.stopPropagation(), ee(h.currentYear - l), z(B(1), 0))
-                    : i || z(void 0, 7 * l)
+                    : r || z(void 0, 7 * l)
                   : e.target === h.currentYearElement
                   ? ee(h.currentYear - l)
                   : h.config.enableTime &&
-                    (!i && h.hourElement && h.hourElement.focus(),
+                    (!r && h.hourElement && h.hourElement.focus(),
                     E(e),
                     h._debouncedChange());
                 break;
               case 9:
-                if (i) {
+                if (r) {
                   var c = [
                       h.hourElement,
                       h.minuteElement,
@@ -1606,7 +1606,7 @@
             }
           (t || Q(e.target)) && he("onKeyDown", e);
         }
-        function re(e) {
+        function ie(e) {
           if (
             1 === h.selectedDates.length &&
             (!e ||
@@ -1619,23 +1619,23 @@
                   : h.days.firstElementChild.dateObj.getTime(),
                 n = h.parseDate(h.selectedDates[0], void 0, !0).getTime(),
                 a = Math.min(t, h.selectedDates[0].getTime()),
-                r = Math.max(t, h.selectedDates[0].getTime()),
-                i = !1,
+                i = Math.max(t, h.selectedDates[0].getTime()),
+                r = !1,
                 o = 0,
                 l = 0,
                 c = a;
-              c < r;
+              c < i;
               c += k.DAY
             )
               te(new Date(c), !0) ||
-                ((i = i || (c > a && c < r)),
+                ((r = r || (c > a && c < i)),
                 c < n && (!o || c > o)
                   ? (o = c)
                   : c > n && (!l || c < l) && (l = c));
             for (var d = 0; d < h.config.showMonths; d++)
               for (
                 var s = h.daysContainer.children[d],
-                  f = function(a, r) {
+                  f = function(a, i) {
                     var c = s.children[a],
                       d = c.dateObj,
                       f = d.getTime(),
@@ -1648,7 +1648,7 @@
                           c.classList.remove(e);
                         }),
                         "continue")
-                      : i && !p
+                      : r && !p
                       ? "continue"
                       : ([
                           "startRange",
@@ -1682,7 +1682,7 @@
                 f(p);
           }
         }
-        function ie() {
+        function re() {
           !h.isOpen || h.config.static || h.config.inline || de();
         }
         function oe() {
@@ -1764,12 +1764,12 @@
                 0
               ),
               a = h.calendarContainer.offsetWidth,
-              r = h.config.position.split(" "),
-              i = r[0],
-              o = r.length > 1 ? r[1] : null,
+              i = h.config.position.split(" "),
+              r = i[0],
+              o = i.length > 1 ? i[1] : null,
               l = t.getBoundingClientRect(),
               d = window.innerHeight - l.bottom,
-              s = "above" === i || ("below" !== i && d < n && l.top > n),
+              s = "above" === r || ("below" !== r && d < n && l.top > n),
               f =
                 window.pageYOffset + l.top + (s ? -n - 2 : t.offsetHeight + 2);
             if (
@@ -1836,16 +1836,16 @@
           if (void 0 !== t) {
             var n = t,
               a = (h.latestSelectedDateObj = new Date(n.dateObj.getTime())),
-              r =
+              i =
                 (a.getMonth() < h.currentMonth ||
                   a.getMonth() > h.currentMonth + h.config.showMonths - 1) &&
                 "range" !== h.config.mode;
             if (((h.selectedDateElem = n), "single" === h.config.mode))
               h.selectedDates = [a];
             else if ("multiple" === h.config.mode) {
-              var i = ve(a);
-              i
-                ? h.selectedDates.splice(parseInt(i), 1)
+              var r = ve(a);
+              r
+                ? h.selectedDates.splice(parseInt(r), 1)
                 : h.selectedDates.push(a);
             } else
               "range" === h.config.mode &&
@@ -1856,7 +1856,7 @@
                   h.selectedDates.sort(function(e, t) {
                     return e.getTime() - t.getTime();
                   }));
-            if ((I(), r)) {
+            if ((I(), i)) {
               var o = h.currentYear !== a.getFullYear();
               (h.currentYear = a.getFullYear()),
                 (h.currentMonth = a.getMonth()),
@@ -1871,7 +1871,7 @@
                 setTimeout(function() {
                   return (h.showTimeInput = !0);
                 }, 50),
-              r || "range" === h.config.mode || 1 !== h.config.showMonths
+              i || "range" === h.config.mode || 1 !== h.config.showMonths
                 ? void 0 !== h.selectedDateElem &&
                   void 0 === h.hourElement &&
                   h.selectedDateElem &&
@@ -1993,7 +1993,7 @@
               });
           }),
           (h.isEnabled = te),
-          (h.jumpToDate = L),
+          (h.jumpToDate = P),
           (h.open = function(e, t) {
             if ((void 0 === t && (t = h._positionElement), !0 === h.isMobile))
               return (
@@ -2050,7 +2050,7 @@
               (h.latestSelectedDateObj =
                 h.selectedDates[h.selectedDates.length - 1]),
               h.redraw(),
-              L(),
+              P(),
               T(),
               0 === h.selectedDates.length && h.clear(!1),
               ke(t),
@@ -2063,8 +2063,8 @@
         var ue = {
           locale: [ce, V],
           showMonths: [K, M, G],
-          minDate: [L],
-          maxDate: [L]
+          minDate: [P],
+          maxDate: [P]
         };
         function me(e, t) {
           var n = [];
@@ -2229,10 +2229,10 @@
                     "enableSeconds",
                     "disableMobile"
                   ],
-                  r = e({}, m, JSON.parse(JSON.stringify(p.dataset || {}))),
-                  i = {};
-                (h.config.parseDate = r.parseDate),
-                  (h.config.formatDate = r.formatDate),
+                  i = e({}, m, JSON.parse(JSON.stringify(p.dataset || {}))),
+                  r = {};
+                (h.config.parseDate = i.parseDate),
+                  (h.config.formatDate = i.formatDate),
                   Object.defineProperty(h.config, "enable", {
                     get: function() {
                       return h.config._enable;
@@ -2249,22 +2249,22 @@
                       h.config._disable = ge(e);
                     }
                   });
-                var o = "time" === r.mode;
-                if (!r.dateFormat && (r.enableTime || o)) {
+                var o = "time" === i.mode;
+                if (!i.dateFormat && (i.enableTime || o)) {
                   var c = C.defaultConfig.dateFormat || n.dateFormat;
-                  i.dateFormat =
-                    r.noCalendar || o
-                      ? "H:i" + (r.enableSeconds ? ":S" : "")
-                      : c + " H:i" + (r.enableSeconds ? ":S" : "");
+                  r.dateFormat =
+                    i.noCalendar || o
+                      ? "H:i" + (i.enableSeconds ? ":S" : "")
+                      : c + " H:i" + (i.enableSeconds ? ":S" : "");
                 }
-                if (r.altInput && (r.enableTime || o) && !r.altFormat) {
+                if (i.altInput && (i.enableTime || o) && !i.altFormat) {
                   var d = C.defaultConfig.altFormat || n.altFormat;
-                  i.altFormat =
-                    r.noCalendar || o
-                      ? "h:i" + (r.enableSeconds ? ":S K" : " K")
-                      : d + " h:i" + (r.enableSeconds ? ":S" : "") + " K";
+                  r.altFormat =
+                    i.noCalendar || o
+                      ? "h:i" + (i.enableSeconds ? ":S K" : " K")
+                      : d + " h:i" + (i.enableSeconds ? ":S" : "") + " K";
                 }
-                r.altInputClass ||
+                i.altInputClass ||
                   (h.config.altInputClass =
                     h.input.className + " " + h.config.altInputClass),
                   Object.defineProperty(h.config, "minDate", {
@@ -2298,9 +2298,9 @@
                     },
                     set: s("max")
                   }),
-                  "time" === r.mode &&
+                  "time" === i.mode &&
                     ((h.config.noCalendar = !0), (h.config.enableTime = !0)),
-                  Object.assign(h.config, i, r);
+                  Object.assign(h.config, r, i);
                 for (var f = 0; f < a.length; f++)
                   h.config[a[f]] =
                     !0 === h.config[a[f]] || "true" === h.config[a[f]];
@@ -2328,7 +2328,7 @@
                       ? (h.config[g] = l(u[g])
                           .map(D)
                           .concat(h.config[g]))
-                      : void 0 === r[g] && (h.config[g] = u[g]);
+                      : void 0 === i[g] && (h.config[g] = u[g]);
                 }
                 he("onParseConfig");
               })(),
@@ -2423,7 +2423,7 @@
                   );
                 }
               }),
-              h.isMobile || Y(),
+              h.isMobile || L(),
               F(),
               (h.selectedDates.length || h.config.noCalendar) &&
                 (h.config.enableTime &&
@@ -2448,17 +2448,17 @@
               return e instanceof HTMLElement;
             }),
             a = [],
-            r = 0;
-          r < n.length;
-          r++
+            i = 0;
+          i < n.length;
+          i++
         ) {
-          var i = n[r];
+          var r = n[i];
           try {
-            if (null !== i.getAttribute("data-fp-omit")) continue;
-            void 0 !== i._flatpickr &&
-              (i._flatpickr.destroy(), (i._flatpickr = void 0)),
-              (i._flatpickr = D(i, t || {})),
-              a.push(i._flatpickr);
+            if (null !== r.getAttribute("data-fp-omit")) continue;
+            void 0 !== r._flatpickr &&
+              (r._flatpickr.destroy(), (r._flatpickr = void 0)),
+              (r._flatpickr = D(r, t || {})),
+              a.push(r._flatpickr);
           } catch (e) {
             console.error(e);
           }
@@ -2515,8 +2515,8 @@
   function(e, t, n) {
     var a = n(2);
     "string" == typeof a && (a = [[e.i, a, ""]]);
-    var r = { hmr: !0, transform: void 0, insertInto: void 0 };
-    n(4)(a, r);
+    var i = { hmr: !0, transform: void 0, insertInto: void 0 };
+    n(4)(a, i);
     a.locals && (e.exports = a.locals);
   },
   function(e, t, n) {
@@ -2538,17 +2538,17 @@
                 a = e[3];
               if (!a) return n;
               if (t && "function" == typeof btoa) {
-                var r =
+                var i =
                     ((o = a),
                     "/*# sourceMappingURL=data:application/json;charset=utf-8;base64," +
                       btoa(unescape(encodeURIComponent(JSON.stringify(o)))) +
                       " */"),
-                  i = a.sources.map(function(e) {
+                  r = a.sources.map(function(e) {
                     return "/*# sourceURL=" + a.sourceRoot + e + " */";
                   });
                 return [n]
-                  .concat(i)
-                  .concat([r])
+                  .concat(r)
+                  .concat([i])
                   .join("\n");
               }
               var o;
@@ -2559,12 +2559,12 @@
         }),
         (t.i = function(e, n) {
           "string" == typeof e && (e = [[null, e, ""]]);
-          for (var a = {}, r = 0; r < this.length; r++) {
-            var i = this[r][0];
-            null != i && (a[i] = !0);
+          for (var a = {}, i = 0; i < this.length; i++) {
+            var r = this[i][0];
+            null != r && (a[r] = !0);
           }
-          for (r = 0; r < e.length; r++) {
-            var o = e[r];
+          for (i = 0; i < e.length; i++) {
+            var o = e[i];
             (null != o[0] && a[o[0]]) ||
               (n && !o[2]
                 ? (o[2] = n)
@@ -2578,14 +2578,14 @@
   },
   function(e, t, n) {
     var a,
-      r,
-      i = {},
+      i,
+      r = {},
       o =
         ((a = function() {
           return window && document && document.all && !window.atob;
         }),
         function() {
-          return void 0 === r && (r = a.apply(this, arguments)), r;
+          return void 0 === i && (i = a.apply(this, arguments)), i;
         }),
       l = (function(e) {
         var t = {};
@@ -2616,23 +2616,23 @@
     function p(e, t) {
       for (var n = 0; n < e.length; n++) {
         var a = e[n],
-          r = i[a.id];
-        if (r) {
-          r.refs++;
-          for (var o = 0; o < r.parts.length; o++) r.parts[o](a.parts[o]);
-          for (; o < a.parts.length; o++) r.parts.push(v(a.parts[o], t));
+          i = r[a.id];
+        if (i) {
+          i.refs++;
+          for (var o = 0; o < i.parts.length; o++) i.parts[o](a.parts[o]);
+          for (; o < a.parts.length; o++) i.parts.push(v(a.parts[o], t));
         } else {
           var l = [];
           for (o = 0; o < a.parts.length; o++) l.push(v(a.parts[o], t));
-          i[a.id] = { id: a.id, refs: 1, parts: l };
+          r[a.id] = { id: a.id, refs: 1, parts: l };
         }
       }
     }
     function u(e, t) {
-      for (var n = [], a = {}, r = 0; r < e.length; r++) {
-        var i = e[r],
-          o = t.base ? i[0] + t.base : i[0],
-          l = { css: i[1], media: i[2], sourceMap: i[3] };
+      for (var n = [], a = {}, i = 0; i < e.length; i++) {
+        var r = e[i],
+          o = t.base ? r[0] + t.base : r[0],
+          l = { css: r[1], media: r[2], sourceMap: r[3] };
         a[o] ? a[o].parts.push(l) : n.push((a[o] = { id: o, parts: [l] }));
       }
       return n;
@@ -2657,8 +2657,8 @@
           throw new Error(
             "[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n"
           );
-        var r = l(e.insertAt.before, n);
-        n.insertBefore(t, r);
+        var i = l(e.insertAt.before, n);
+        n.insertBefore(t, i);
       }
     }
     function g(e) {
@@ -2687,22 +2687,22 @@
       });
     }
     function v(e, t) {
-      var n, a, r, i;
+      var n, a, i, r;
       if (t.transform && e.css) {
         if (
-          !(i =
+          !(r =
             "function" == typeof t.transform
               ? t.transform(e.css)
               : t.transform.default(e.css))
         )
           return function() {};
-        e.css = i;
+        e.css = r;
       }
       if (t.singleton) {
         var o = d++;
         (n = c || (c = h(t))),
           (a = k.bind(null, n, o, !1)),
-          (r = k.bind(null, n, o, !0));
+          (i = k.bind(null, n, o, !0));
       } else
         e.sourceMap &&
         "function" == typeof URL &&
@@ -2722,19 +2722,19 @@
             })(t)),
             (a = function(e, t, n) {
               var a = n.css,
-                r = n.sourceMap,
-                i = void 0 === t.convertToAbsoluteUrls && r;
-              (t.convertToAbsoluteUrls || i) && (a = f(a));
-              r &&
+                i = n.sourceMap,
+                r = void 0 === t.convertToAbsoluteUrls && i;
+              (t.convertToAbsoluteUrls || r) && (a = f(a));
+              i &&
                 (a +=
                   "\n/*# sourceMappingURL=data:application/json;base64," +
-                  btoa(unescape(encodeURIComponent(JSON.stringify(r)))) +
+                  btoa(unescape(encodeURIComponent(JSON.stringify(i)))) +
                   " */");
               var o = new Blob([a], { type: "text/css" }),
                 l = e.href;
               (e.href = URL.createObjectURL(o)), l && URL.revokeObjectURL(l);
             }.bind(null, n, t)),
-            (r = function() {
+            (i = function() {
               g(n), n.href && URL.revokeObjectURL(n.href);
             }))
           : ((n = h(t)),
@@ -2748,7 +2748,7 @@
                 e.appendChild(document.createTextNode(n));
               }
             }.bind(null, n)),
-            (r = function() {
+            (i = function() {
               g(n);
             }));
       return (
@@ -2762,7 +2762,7 @@
             )
               return;
             a((e = t));
-          } else r();
+          } else i();
         }
       );
     }
@@ -2779,16 +2779,16 @@
       return (
         p(n, t),
         function(e) {
-          for (var a = [], r = 0; r < n.length; r++) {
-            var o = n[r];
-            (l = i[o.id]).refs--, a.push(l);
+          for (var a = [], i = 0; i < n.length; i++) {
+            var o = n[i];
+            (l = r[o.id]).refs--, a.push(l);
           }
           e && p(u(e, t), t);
-          for (r = 0; r < a.length; r++) {
+          for (i = 0; i < a.length; i++) {
             var l;
-            if (0 === (l = a[r]).refs) {
+            if (0 === (l = a[i]).refs) {
               for (var c = 0; c < l.parts.length; c++) l.parts[c]();
-              delete i[l.id];
+              delete r[l.id];
             }
           }
         }
@@ -2801,13 +2801,13 @@
           return (y[e] = t), y.filter(Boolean).join("\n");
         });
     function k(e, t, n, a) {
-      var r = n ? "" : a.css;
-      if (e.styleSheet) e.styleSheet.cssText = w(t, r);
+      var i = n ? "" : a.css;
+      if (e.styleSheet) e.styleSheet.cssText = w(t, i);
       else {
-        var i = document.createTextNode(r),
+        var r = document.createTextNode(i),
           o = e.childNodes;
         o[t] && e.removeChild(o[t]),
-          o.length ? e.insertBefore(i, o[t]) : e.appendChild(i);
+          o.length ? e.insertBefore(r, o[t]) : e.appendChild(r);
       }
     }
   },
@@ -2821,8 +2821,8 @@
       return e.replace(
         /url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,
         function(e, t) {
-          var r,
-            i = t
+          var i,
+            r = t
               .trim()
               .replace(/^"(.*)"$/, function(e, t) {
                 return t;
@@ -2830,15 +2830,15 @@
               .replace(/^'(.*)'$/, function(e, t) {
                 return t;
               });
-          return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(i)
+          return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(r)
             ? e
-            : ((r =
-                0 === i.indexOf("//")
-                  ? i
-                  : 0 === i.indexOf("/")
-                  ? n + i
-                  : a + i.replace(/^\.\//, "")),
-              "url(" + JSON.stringify(r) + ")");
+            : ((i =
+                0 === r.indexOf("//")
+                  ? r
+                  : 0 === r.indexOf("/")
+                  ? n + r
+                  : a + r.replace(/^\.\//, "")),
+              "url(" + JSON.stringify(i) + ")");
         }
       );
     };
@@ -2851,7 +2851,7 @@
         ? JSON.parse(localStorage.getItem("projects"))
         : [];
     };
-    var r = e => {
+    var i = e => {
       const t = document.getElementById("display-projects");
       (t.innerHTML = ""),
         e.length > 0
@@ -2860,7 +2860,7 @@
             })
           : (t.innerHTML = "No projects yet! Add one");
     };
-    var i = () => {
+    var r = () => {
       document.querySelectorAll(".todo-title h3").forEach(function(e) {
         e.addEventListener("click", function() {
           let t = e.parentElement.nextElementSibling;
@@ -2873,16 +2873,16 @@
     var o = e => {
       let t = a(),
         n = t.find(t => t.id === e),
-        r = n.todo;
+        i = n.todo;
       document
         .querySelectorAll('.todo-title input[type="checkbox"]')
         .forEach(function(e) {
           e.addEventListener("click", () => {
             let a = e.parentNode.parentNode.id,
-              i = r.findIndex(e => e.id === a);
+              r = i.findIndex(e => e.id === a);
             return (
-              r.splice(i, 1),
-              (n.todo = r),
+              i.splice(r, 1),
+              (n.todo = i),
               localStorage.setItem("projects", JSON.stringify(t)),
               l(n),
               n
@@ -2899,15 +2899,15 @@
           ? (a.style.display = "block")
           : a.style.display,
         (n.innerHTML = "");
-      let r = "";
+      let i = "";
       e.todo.length > 0
         ? e.todo.forEach(e => {
-            r += `<div id="${e.id}" class="todo-row ${e.priority}">\n                <div class="todo-title">\n                    <h3>${e.title}</h3><span>${e.duedate}</span>\n                    <input type="checkbox" name="done" id="checkbox-${e.id}"><label for="checkbox-${e.id}">Done?</label>\n                </div>\n                <div class="todo-details" style="display:none;">\n                    <p class="todo-description">${e.description}</p>\n                </div>\n            </div>`;
+            i += `<div id="${e.id}" class="todo-row ${e.priority}">\n                <div class="todo-title">\n                    <h3>${e.title}</h3><span>${e.duedate}</span>\n                    <input type="checkbox" name="done" id="checkbox-${e.id}"><label for="checkbox-${e.id}">Done?</label>\n                </div>\n                <div class="todo-details" style="display:none;">\n                    <p class="todo-description">${e.description}</p>\n                </div>\n            </div>`;
           })
-        : (r = "No Todo yet!"),
-        (n.innerHTML += r);
+        : (i = "No Todo yet!"),
+        (n.innerHTML += i);
       let l = e.id;
-      o(l), i();
+      o(l), r();
     };
     var c = () => {
       (document.getElementById("title").value = ""),
@@ -2931,13 +2931,13 @@
         t = document.getElementById("title").value,
         n = document.getElementById("description").value,
         a = document.getElementById("duedate").value,
-        r = t.replace(/\W/g, "").toLowerCase();
-      return ((e, t, n, a, r) => ({
+        i = t.replace(/\W/g, "").toLowerCase();
+      return ((e, t, n, a, i) => ({
         title: e,
         description: t,
         priority: n,
         duedate: a,
-        id: r
+        id: i
       }))(
         t,
         n.replace(/\n\r?/g, "<br>"),
@@ -2946,7 +2946,7 @@
             ? "priority-on"
             : "priority-off"),
         a,
-        r
+        i
       );
     };
     var f = e => {
@@ -2956,9 +2956,9 @@
           event.preventDefault();
           let t = a(),
             n = t.find(t => t.id === e),
-            r = s();
+            i = s();
           return (
-            n.todo.push(r),
+            n.todo.push(i),
             localStorage.setItem("projects", JSON.stringify(t)),
             l(n),
             c(),
@@ -2998,9 +2998,9 @@
         n.addEventListener("click", function() {
           document.getElementById("project-form").style.display = "none";
           let a = n.dataset.id,
-            r = e.find(e => e.id === a);
-          (t.innerHTML = `<div>${r.name}</div>\n                <div class='btn-container'>\n                    <button id='show-todo-form'>Add a Todo</button>\n                    <button id='go-home' class='btn-alt'>Go Home</button>\n                    <div id='delete-project'>Delete project</div>\n                </div>`),
-            l(r),
+            i = e.find(e => e.id === a);
+          (t.innerHTML = `<div>${i.name}</div>\n                <div class='btn-container'>\n                    <button id='show-todo-form'>Add a Todo</button>\n                    <button id='go-home' class='btn-alt'>Go Home</button>\n                    <div id='delete-project'>Delete project</div>\n                </div>`),
+            l(i),
             d(),
             f(a),
             u(a),
@@ -3026,42 +3026,14 @@
           return (
             e.push(t),
             localStorage.setItem("projects", JSON.stringify(e)),
-            r(e),
+            i(e),
             h(),
             (document.getElementById("project-name").value = ""),
             e
           );
         });
     };
-    var y = () => {
-      let e;
-      document.querySelectorAll(".form-field input").forEach(e => {
-        e.addEventListener("blur", () => {
-          t(e);
-        }),
-          e.addEventListener("focus", () => {
-            a(e);
-          });
-      });
-      const t = t => {
-          t.validity.valueMissing
-            ? (n(t, "This field is required!"), (e = !1))
-            : (a(t), (e = !0));
-        },
-        n = (e, t) => {
-          e.classList.add("has-error");
-          let n = document.createElement("span");
-          n.classList.add("error-msg"),
-            (n.innerHTML = t),
-            e.nextElementSibling || e.parentNode.appendChild(n);
-        },
-        a = e => {
-          let t = e.parentNode.querySelector(".error-msg");
-          t && e.parentNode.removeChild(t), e.classList.remove("has-error");
-        };
-      return e;
-    };
-    let w = a();
-    v(), r(w), h(), y();
+    let y = a();
+    v(), i(y), h();
   }
 ]);
