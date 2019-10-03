@@ -1,25 +1,33 @@
 import projects from "./projects";
 import displayProjects from "./displayProjects";
 import openProject from "./openProject";
+import validateRequired from "./validateRequired";
 
 const addProject = () => {
   //set up projects
   let projectArr = projects();
+  let projectNameField = document.querySelector(
+    'input[type="text"]#project-name'
+  );
 
   document
     .getElementById("project-form")
     .addEventListener("submit", function() {
       event.preventDefault();
-      let newProj = newProject();
-      projectArr.push(newProj);
-      localStorage.setItem("projects", JSON.stringify(projectArr));
 
-      displayProjects(projectArr);
-      openProject();
+      if (!validateRequired(projectNameField)) {
+        return false;
+      } else {
+        let newProj = newProject();
+        projectArr.push(newProj);
+        localStorage.setItem("projects", JSON.stringify(projectArr));
 
-      clearForm();
+        displayProjects(projectArr);
+        openProject();
 
-      return projectArr;
+        clearForm();
+        return projectArr;
+      }
     });
 };
 

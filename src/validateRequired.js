@@ -3,7 +3,9 @@ const validateRequired = field => {
     let msg = "This field is required!";
     hasError(field, msg);
     return false;
-  } else {
+  }
+
+  if (!field.validity.valueMissing) {
     removeError(field);
     return true;
   }
