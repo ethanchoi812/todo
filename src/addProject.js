@@ -4,11 +4,13 @@ import openProject from "./openProject";
 import validateRequired from "./validateRequired";
 
 const addProject = () => {
-  //set up projects
-  let projectArr = projects();
   let projectNameField = document.querySelector(
     'input[type="text"]#project-name'
   );
+
+  projectNameField.addEventListener("blur", () => {
+    validateRequired(projectNameField);
+  });
 
   document
     .getElementById("project-form")
@@ -18,6 +20,7 @@ const addProject = () => {
       if (!validateRequired(projectNameField)) {
         return false;
       } else {
+        let projectArr = projects();
         let newProj = newProject();
         projectArr.push(newProj);
         localStorage.setItem("projects", JSON.stringify(projectArr));

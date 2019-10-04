@@ -98,8 +98,7 @@ div.project:last-child {
   display: inline;
 }
 
-#todo-form input,
-#todo-form textarea {
+#todo-form .form-field {
   margin-bottom: 18px;
 }
 

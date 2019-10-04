@@ -1,22 +1,33 @@
 import projects from "./projects";
 import displayTodos from "./displayTodos";
 import clearForm from "./clearForm";
+import validateRequired from "./validateRequired";
 
 const addTodo = projectId => {
+  let todoTitle = document.querySelector('input[type="text"]#title');
+
+  todoTitle.addEventListener("blur", () => {
+    validateRequired(todoTitle);
+  });
+
   document.getElementById("todo-form").addEventListener("submit", function() {
     event.preventDefault();
 
-    let projectArr = projects();
-    let project = projectArr.find(project => project["id"] === projectId);
-    let todo = newTodo();
+    if (!validateRequired(todoTitle)) {
+      return false;
+    } else {
+      let projectArr = projects();
+      let project = projectArr.find(project => project["id"] === projectId);
+      let todo = newTodo();
 
-    project["todo"].push(todo);
-    localStorage.setItem("projects", JSON.stringify(projectArr));
+      project["todo"].push(todo);
+      localStorage.setItem("projects", JSON.stringify(projectArr));
 
-    displayTodos(project);
-    clearForm();
+      displayTodos(project);
+      clearForm();
 
-    return projectArr;
+      return projectArr;
+    }
   });
 };
 

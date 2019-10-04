@@ -2926,7 +2926,22 @@
           c(), (n.style.display = "none");
         });
     };
-    const s = () => {
+    const s = (e, t) => {
+        e.classList.add("has-error");
+        let n = document.createElement("span");
+        n.classList.add("error-msg"),
+          (n.innerHTML = t),
+          e.nextElementSibling || e.parentNode.appendChild(n);
+      },
+      f = e => {
+        let t = e.parentNode.querySelector(".error-msg");
+        t && e.parentNode.removeChild(t), e.classList.remove("has-error");
+      };
+    var p = e => {
+      if (e.validity.valueMissing) return s(e, "This field is required!"), !1;
+      if (!e.validity.valueMissing) return f(e), !0;
+    };
+    const u = () => {
       let e,
         t = document.getElementById("title").value,
         n = document.getElementById("description").value,
@@ -2949,29 +2964,35 @@
         r
       );
     };
-    var f = e => {
-      document
-        .getElementById("todo-form")
-        .addEventListener("submit", function() {
-          event.preventDefault();
-          let t = a(),
-            n = t.find(t => t.id === e),
-            r = s();
-          return (
-            n.todo.push(r),
-            localStorage.setItem("projects", JSON.stringify(t)),
-            l(n),
-            c(),
-            t
-          );
-        });
+    var m = e => {
+      let t = document.querySelector('input[type="text"]#title');
+      t.addEventListener("blur", () => {
+        p(t);
+      }),
+        document
+          .getElementById("todo-form")
+          .addEventListener("submit", function() {
+            if ((event.preventDefault(), p(t))) {
+              let t = a(),
+                n = t.find(t => t.id === e),
+                r = u();
+              return (
+                n.todo.push(r),
+                localStorage.setItem("projects", JSON.stringify(t)),
+                l(n),
+                c(),
+                t
+              );
+            }
+            return !1;
+          });
     };
-    var p = () => {
+    var g = () => {
       document.getElementById("go-home").addEventListener("click", () => {
         location.reload(!0);
       });
     };
-    var u = e => {
+    var h = e => {
         let t = a(),
           n = t.findIndex(t => t.id === e);
         document
@@ -2983,15 +3004,15 @@
               location.reload(!0));
           });
       },
-      m = n(0),
-      g = n.n(m);
+      b = n(0),
+      v = n.n(b);
     n(1);
-    g()("#duedate", {
+    v()("#duedate", {
       disableMobile: !0,
       dateFormat: "d/m/Y",
       minDate: new Date()
     });
-    var h = () => {
+    var y = () => {
       let e = a();
       const t = document.getElementById("display-projects");
       document.querySelectorAll(".project").forEach(n => {
@@ -3002,26 +3023,11 @@
           (t.innerHTML = `<div>${r.name}</div>\n                <div class='btn-container'>\n                    <button id='show-todo-form'>Add a Todo</button>\n                    <button id='go-home' class='btn-alt'>Go Home</button>\n                    <div id='delete-project'>Delete project</div>\n                </div>`),
             l(r),
             d(),
-            f(a),
-            u(a),
-            p();
+            m(a),
+            h(a),
+            g();
         });
       });
-    };
-    const b = (e, t) => {
-        e.classList.add("has-error");
-        let n = document.createElement("span");
-        n.classList.add("error-msg"),
-          (n.innerHTML = t),
-          e.nextElementSibling || e.parentNode.appendChild(n);
-      },
-      v = e => {
-        let t = e.parentNode.querySelector(".error-msg");
-        t && e.parentNode.removeChild(t), e.classList.remove("has-error");
-      };
-    var y = e => {
-      if (e.validity.valueMissing) return b(e, "This field is required!"), !1;
-      if (!e.validity.valueMissing) return v(e), !0;
     };
     const w = () => {
       let e = document.getElementById("project-name").value;
@@ -3032,32 +3038,29 @@
       );
     };
     var k = () => {
-      let e = a(),
-        t = document.querySelector('input[type="text"]#project-name');
-      document
-        .getElementById("project-form")
-        .addEventListener("submit", function() {
-          if ((event.preventDefault(), y(t))) {
-            let t = w();
-            return (
-              e.push(t),
-              localStorage.setItem("projects", JSON.stringify(e)),
-              r(e),
-              h(),
-              (document.getElementById("project-name").value = ""),
-              e
-            );
-          }
-          return !1;
-        });
+      let e = document.querySelector('input[type="text"]#project-name');
+      e.addEventListener("blur", () => {
+        p(e);
+      }),
+        document
+          .getElementById("project-form")
+          .addEventListener("submit", function() {
+            if ((event.preventDefault(), p(e))) {
+              let e = a(),
+                t = w();
+              return (
+                e.push(t),
+                localStorage.setItem("projects", JSON.stringify(e)),
+                r(e),
+                y(),
+                (document.getElementById("project-name").value = ""),
+                e
+              );
+            }
+            return !1;
+          });
     };
-    let x = a(),
-      D = document.querySelector('input[type="text"]#project-name');
-    k(),
-      r(x),
-      h(),
-      D.addEventListener("blur", () => {
-        y(D);
-      });
+    let x = a();
+    k(), r(x), y();
   }
 ]);
