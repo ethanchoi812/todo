@@ -41,7 +41,13 @@ const newTodo = () => {
   let duedate = document.getElementById("duedate").value;
   let id = title.replace(/\W/g, "").toLowerCase();
 
-  let description = descriptionText.replace(/\n\r?/g, "<br>");
+  let description = "";
+
+  if (descriptionText === "") {
+    description = '<span style="color: #ccc"><i>No description</i></span>';
+  } else {
+    description = descriptionText.replace(/\n\r?/g, "<br>");
+  }
 
   let priority;
 

@@ -3022,7 +3022,9 @@
             return { title: e, description: t, priority: n, duedate: a, id: i };
           })(
             e,
-            t.replace(/\n\r?/g, "<br>"),
+            "" === t
+              ? '<span style="color: #ccc"><i>No description</i></span>'
+              : t.replace(/\n\r?/g, "<br>"),
             !0 === document.getElementById("priority").checked
               ? "priority-on"
               : "priority-off",
