@@ -41,7 +41,10 @@ const project = (id, name, todo) => {
 const newProject = () => {
   let name = document.getElementById("project-name").value;
   let todo = [];
-  let id = name.replace(/\W/g, "").toLowerCase();
+
+  let d = new Date();
+  let n = d.getTime();
+  let id = name.replace(/\W/g, "").toLowerCase() + n;
 
   let newProject = project(id, name, todo);
 

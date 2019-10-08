@@ -3017,8 +3017,9 @@
         var e = document.getElementById("title").value,
           t = document.getElementById("description").value,
           n = document.getElementById("duedate").value,
-          a = e.replace(/\W/g, "").toLowerCase(),
-          i = (function(e, t, n, a, i) {
+          a = new Date().getTime(),
+          i = e.replace(/\W/g, "").toLowerCase() + a,
+          o = (function(e, t, n, a, i) {
             return { title: e, description: t, priority: n, duedate: a, id: i };
           })(
             e,
@@ -3029,9 +3030,9 @@
               ? "priority-on"
               : "priority-off",
             n,
-            a
+            i
           );
-        return i;
+        return o;
       },
       m = function(e) {
         var t = document.querySelector('input[type="text"]#title');
@@ -3112,10 +3113,11 @@
         }),
       w = function() {
         var e = document.getElementById("project-name").value,
-          t = (function(e, t, n) {
+          t = new Date().getTime(),
+          n = (function(e, t, n) {
             return { id: e, name: t, todo: n };
-          })(e.replace(/\W/g, "").toLowerCase(), e, []);
-        return t;
+          })(e.replace(/\W/g, "").toLowerCase() + t, e, []);
+        return n;
       };
     var x = function() {
         var e = document.querySelector('input[type="text"]#project-name');

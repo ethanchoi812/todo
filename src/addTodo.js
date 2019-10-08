@@ -39,7 +39,10 @@ const newTodo = () => {
   let title = document.getElementById("title").value;
   let descriptionText = document.getElementById("description").value;
   let duedate = document.getElementById("duedate").value;
-  let id = title.replace(/\W/g, "").toLowerCase();
+
+  let d = new Date();
+  let n = d.getTime();
+  let id = title.replace(/\W/g, "").toLowerCase() + n;
 
   let description = "";
 
