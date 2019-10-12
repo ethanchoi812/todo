@@ -56,6 +56,10 @@ button.btn-alt {
 }
 
 #display-projects {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
   text-align: center;
   font-size: 28px;
   margin-top: 30px;
@@ -64,15 +68,10 @@ button.btn-alt {
 div.project {
   background: #fff000;
   display: inline-block;
+  margin: 10px;
   position: relative;
   padding: 15px 18px;
-  margin-right: 25px;
-  margin-bottom: 20px;
   border-radius: 5px;
-}
-
-div.project:last-child {
-  margin-right: 0px;
 }
 
 /* Todo styles */
