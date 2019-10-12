@@ -107,10 +107,15 @@ div.project {
 }
 
 .todo-row {
+  display: block;
   border-bottom: 2px solid #ccc;
 }
 
 .todo-title {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: baseline;
+  justify-content: center;
   background: #eee;
   padding-left: 10px;
 }
@@ -119,18 +124,17 @@ div.project {
   display: inline-block;
   font-size: 18px;
   font-weight: 700;
+  width: 50%;
 }
 
 .todo-title span {
   color: #333;
   font-weight: 400;
-  margin-left: 25px;
-  text-align: right;
+  width: 20%;
 }
 
 .todo-title label {
   color: #333;
-  vertical-align: middle;
 }
 
 .priority-on .todo-title {
