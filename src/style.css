@@ -60,9 +60,9 @@ button.btn-alt {
   flex-flow: row wrap;
   justify-content: space-evenly;
   align-content: space-around;
+  margin-top: 30px;
   text-align: center;
   font-size: 28px;
-  margin-top: 30px;
 }
 
 div.project {
@@ -75,6 +75,10 @@ div.project {
 }
 
 /* Todo styles */
+
+div#display-todos {
+  margin-top: 30px;
+}
 
 #todo-form {
   background: #fff;
@@ -109,13 +113,15 @@ div.project {
 .todo-row {
   display: block;
   border-bottom: 2px solid #ccc;
+  margin: 0 auto;
+  width: 60%;
 }
 
 .todo-title {
   display: flex;
   flex-flow: row nowrap;
   align-items: baseline;
-  justify-content: center;
+  justify-content: space-around;
   background: #eee;
   padding-left: 10px;
 }

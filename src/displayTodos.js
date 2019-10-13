@@ -19,9 +19,11 @@ const displayTodos = project => {
       todoDiv += `<div id="${todo["id"]}" class="todo-row ${todo["priority"]}">
                 <div class="todo-title">
                     <h3>${todo["title"]}</h3><span>${todo["duedate"]}</span>
+                    <div>
                     <input type="checkbox" name="done" id="checkbox-${
                       todo["id"]
                     }"><label for="checkbox-${todo["id"]}">Done?</label>
+                    </div>
                 </div>
                 <div class="todo-details" style="display:none;">
                     <p class="todo-description">${todo["description"]}</p>

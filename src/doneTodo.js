@@ -11,7 +11,7 @@ const doneTodo = projectId => {
   );
   checkboxes.forEach(function(checkbox) {
     checkbox.addEventListener("click", () => {
-      let thisTodo = checkbox.parentNode.parentNode;
+      let thisTodo = checkbox.parentNode.parentNode.parentNode;
       let todoId = thisTodo.id;
       let index = todoArr.findIndex(todo => todo["id"] === todoId);
 
